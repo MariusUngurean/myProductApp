@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1886c3b5-84d4-40a3-86ee-e2ac9f48dbd0" name="Default Changelist" comment="" />
+    <list default="true" id="1886c3b5-84d4-40a3-86ee-e2ac9f48dbd0" name="Default Changelist" comment="removed useless imports">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +39,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="22" />
-          <entry key="java" value="35451" />
+          <entry key="java" value="35669" />
           <entry key="persistence" value="57" />
           <entry key="sql" value="219" />
           <entry key="txt" value="23" />
@@ -46,7 +49,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="DBN-SQL" value="219" />
-          <entry key="JAVA" value="35451" />
+          <entry key="JAVA" value="35669" />
           <entry key="PLAIN_TEXT" value="45" />
           <entry key="XML" value="614" />
         </counts>
@@ -120,7 +123,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Product.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -141,16 +144,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="345" lean-forward="true" selection-start-line="345" selection-end-line="345" />
+            <state relative-caret-position="568">
+              <caret line="119" column="69" selection-start-line="119" selection-start-column="69" selection-end-line="119" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setUp#0;class#AppTest#0" />
                 <element signature="method#tearDown#0;class#AppTest#0" />
                 <element signature="method#getAllProducts#0;class#AppTest#0" />
+                <element signature="method#getAllDescriptions#0;class#AppTest#0" />
                 <element signature="method#addProduct#0;class#AppTest#0" />
                 <element signature="method#addCategory#0;class#AppTest#0" />
                 <element signature="method#addDescription#0;class#AppTest#0" />
@@ -278,9 +282,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Description.java" />
         <option value="$PROJECT_DIR$/src/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Price.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Product.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java" />
       </list>
     </option>
   </component>
@@ -423,7 +427,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538040338571" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538040969021" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -458,7 +462,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest">
+  <component name="RunManager" selected="JUnit.AppTest.getAllPrices">
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="productapp" />
       <extension name="coverage">
@@ -473,7 +477,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.deleteDescription" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.getAllCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="productapp" />
       <extension name="coverage">
         <pattern>
@@ -483,13 +487,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mungurean.productApp" />
       <option name="MAIN_CLASS_NAME" value="com.mungurean.productApp.AppTest" />
-      <option name="METHOD_NAME" value="deleteDescription" />
+      <option name="METHOD_NAME" value="getAllCategories" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.deletePrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.getAllDescriptions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="productapp" />
       <extension name="coverage">
         <pattern>
@@ -499,13 +503,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mungurean.productApp" />
       <option name="MAIN_CLASS_NAME" value="com.mungurean.productApp.AppTest" />
-      <option name="METHOD_NAME" value="deletePrice" />
+      <option name="METHOD_NAME" value="getAllDescriptions" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.deleteProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.getAllPrices" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="productapp" />
       <extension name="coverage">
         <pattern>
@@ -515,13 +519,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mungurean.productApp" />
       <option name="MAIN_CLASS_NAME" value="com.mungurean.productApp.AppTest" />
-      <option name="METHOD_NAME" value="deleteProduct" />
+      <option name="METHOD_NAME" value="getAllPrices" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.updateDescription" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.getAllProducts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="productapp" />
       <extension name="coverage">
         <pattern>
@@ -531,26 +535,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mungurean.productApp" />
       <option name="MAIN_CLASS_NAME" value="com.mungurean.productApp.AppTest" />
-      <option name="METHOD_NAME" value="updateDescription" />
+      <option name="METHOD_NAME" value="getAllProducts" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.AppTest.deleteProduct" />
-      <item itemvalue="JUnit.AppTest.deleteDescription" />
-      <item itemvalue="JUnit.AppTest.updateDescription" />
       <item itemvalue="JUnit.AppTest" />
-      <item itemvalue="JUnit.AppTest.deletePrice" />
+      <item itemvalue="JUnit.AppTest.getAllDescriptions" />
+      <item itemvalue="JUnit.AppTest.getAllProducts" />
+      <item itemvalue="JUnit.AppTest.getAllCategories" />
+      <item itemvalue="JUnit.AppTest.getAllPrices" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTest.getAllPrices" />
+        <item itemvalue="JUnit.AppTest.getAllCategories" />
+        <item itemvalue="JUnit.AppTest.getAllProducts" />
+        <item itemvalue="JUnit.AppTest.getAllDescriptions" />
         <item itemvalue="JUnit.AppTest" />
-        <item itemvalue="JUnit.AppTest.deletePrice" />
-        <item itemvalue="JUnit.AppTest.updateDescription" />
-        <item itemvalue="JUnit.AppTest.deleteProduct" />
-        <item itemvalue="JUnit.AppTest.deleteDescription" />
       </list>
     </recent_temporary>
   </component>
@@ -579,12 +583,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AppTest_deletePrice - 2018.09.26 at 13h 34m 17s.xml">
-      <configuration name="AppTest.deletePrice" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppTest_deletePrice - 2018.09.26 at 13h 35m 17s.xml">
-      <configuration name="AppTest.deletePrice" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AppTest_deletePrice - 2018.09.26 at 13h 37m 58s.xml">
       <configuration name="AppTest.deletePrice" configurationId="JUnit" />
     </history-entry>
@@ -608,6 +606,12 @@
     </history-entry>
     <history-entry file="AppTest - 2018.09.26 at 15h 23m 19s.xml">
       <configuration name="AppTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_getAllDescriptions - 2018.09.27 at 12h 33m 33s.xml">
+      <configuration name="AppTest.getAllDescriptions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_getAllProducts - 2018.09.27 at 12h 34m 46s.xml">
+      <configuration name="AppTest.getAllProducts" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -932,35 +936,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="345" lean-forward="true" selection-start-line="345" selection-end-line="345" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setUp#0;class#AppTest#0" />
-            <element signature="method#tearDown#0;class#AppTest#0" />
-            <element signature="method#getAllProducts#0;class#AppTest#0" />
-            <element signature="method#addProduct#0;class#AppTest#0" />
-            <element signature="method#addCategory#0;class#AppTest#0" />
-            <element signature="method#addDescription#0;class#AppTest#0" />
-            <element signature="method#addPrice#0;class#AppTest#0" />
-            <element signature="method#deleteAllFromProduct#0;class#AppTest#0" />
-            <element signature="method#deleteAllFromPrice#0;class#AppTest#0" />
-            <element signature="method#deleteAllFromCategory#0;class#AppTest#0" />
-            <element signature="method#deleteAllFromDescription#0;class#AppTest#0" />
-            <element signature="method#updateProduct#0;class#AppTest#0" />
-            <element signature="method#updateCategory#0;class#AppTest#0" />
-            <element signature="method#updateDescription#0;class#AppTest#0" />
-            <element signature="method#updatePrice#0;class#AppTest#0" />
-            <element signature="method#deleteProduct#0;class#AppTest#0" />
-            <element signature="method#deleteDescription#0;class#AppTest#0" />
-            <element signature="method#deleteCategory#0;class#AppTest#0" />
-            <element signature="method#deletePrice#0;class#AppTest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Category.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1025,6 +1000,36 @@
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="119" column="69" selection-start-line="119" selection-start-column="69" selection-end-line="119" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setUp#0;class#AppTest#0" />
+            <element signature="method#tearDown#0;class#AppTest#0" />
+            <element signature="method#getAllProducts#0;class#AppTest#0" />
+            <element signature="method#getAllDescriptions#0;class#AppTest#0" />
+            <element signature="method#addProduct#0;class#AppTest#0" />
+            <element signature="method#addCategory#0;class#AppTest#0" />
+            <element signature="method#addDescription#0;class#AppTest#0" />
+            <element signature="method#addPrice#0;class#AppTest#0" />
+            <element signature="method#deleteAllFromProduct#0;class#AppTest#0" />
+            <element signature="method#deleteAllFromPrice#0;class#AppTest#0" />
+            <element signature="method#deleteAllFromCategory#0;class#AppTest#0" />
+            <element signature="method#deleteAllFromDescription#0;class#AppTest#0" />
+            <element signature="method#updateProduct#0;class#AppTest#0" />
+            <element signature="method#updateCategory#0;class#AppTest#0" />
+            <element signature="method#updateDescription#0;class#AppTest#0" />
+            <element signature="method#updatePrice#0;class#AppTest#0" />
+            <element signature="method#deleteProduct#0;class#AppTest#0" />
+            <element signature="method#deleteDescription#0;class#AppTest#0" />
+            <element signature="method#deleteCategory#0;class#AppTest#0" />
+            <element signature="method#deletePrice#0;class#AppTest#0" />
           </folding>
         </state>
       </provider>

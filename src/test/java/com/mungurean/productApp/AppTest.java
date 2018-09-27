@@ -66,15 +66,58 @@ public class AppTest {
 
     @Test
     public void getAllProducts() {
+        List<Product> list = new ArrayList<>();
         try {
             entityManager.getTransaction().begin();
-            dao.getAllProducts();
+            list = dao.getAllProducts();
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
         }
-        assertThat(dao.getAllProducts()).isNotEmpty();
+        assertThat(list).containsExactlyElementsOf(dao.getAllProducts());
+    }
+
+    @Test
+    public void getAllDescriptions() {
+        List<Description> list = new ArrayList<>();
+        try {
+            entityManager.getTransaction().begin();
+            list = dao.getAllDescriptions();
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        assertThat(list).containsExactlyElementsOf(dao.getAllDescriptions());
+    }
+
+    @Test
+    public void getAllCategories() {
+        List<Category> list = new ArrayList<>();
+        try {
+            entityManager.getTransaction().begin();
+            list = dao.getAllCategories();
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        assertThat(list).containsExactlyElementsOf(dao.getAllCategories());
+    }
+
+    @Test
+    public void getAllPrices() {
+        List<Price> list = new ArrayList<>();
+        try {
+            entityManager.getTransaction().begin();
+            list = dao.getAllPrices();
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        assertThat(list).containsExactlyElementsOf(dao.getAllPrices());
     }
 
     @Test
