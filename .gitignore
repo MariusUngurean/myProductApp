@@ -1,1 +1,4 @@
-\.idea
+.idea/
+pom.xml
+productapp.iml
+target/
