@@ -172,7 +172,7 @@ public class DAOImpl {
 
     public void deleteDescription(long id) {
         findDescription(id).ifPresent((description) -> {
-            description.getProduct().setDescription(null);
+          //  description.getProduct().setDescription(null);
             entityManager.remove(description);
         });
     }
