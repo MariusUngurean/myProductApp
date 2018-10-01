@@ -335,22 +335,24 @@ public class AppTest {
     @Test
     public void deleteDescription() {
 
-        // Product p = new Product();
+        Product p = new Product();
+        Description d = new Description();
         try {
             entityManager.getTransaction().begin();
-            Description description = dao.getAllDescriptions().get(0);
-            //  p = dao.getAllProducts().get(0);
-            //  dao.deleteDescription(description.getId());
-            entityManager.remove(description);
+            p = dao.getAllProducts().get(0);
+            d = p.getDescription();
+            dao.deleteDescription(d.getId());
+            entityManager.remove(d);
             entityManager.getTransaction().commit();
-            //  assertThat(dao.getAllDescriptions()).doesNotContain(description);
+
         } catch (Exception e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
         }
 
         System.out.println(dao.getAllProducts());
-        //  assertThat(p.getDescription()).isNull();
+        assertThat(p.getDescription()).isNull();
+        assertThat(dao.getAllDescriptions()).doesNotContain(d);
     }
 
     @Test
