@@ -65,7 +65,7 @@ public class AppTest {
     }
 
     @Test
-    public void getAllProducts() {
+    public void getAllProducts()  {
         List<Product> list = new ArrayList<>();
         try {
             entityManager.getTransaction().begin();
