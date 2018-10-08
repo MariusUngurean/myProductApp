@@ -4,10 +4,10 @@ import com.mungurean.productApp.module.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 import java.util.*;
 
@@ -19,12 +19,16 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
  */
 
 public class AppTest {
-    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("projectDatabase");
-    private EntityManager entityManager = entityManagerFactory.createEntityManager();
-    private DAOImpl dao = new DAOImpl(entityManager);
+    //    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("projectDatabase");
+//    private EntityManager entityManager = entityManagerFactory.createEntityManager();
+//    private DAOImpl dao = new DAOImpl(entityManager);
+    private AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
-    @Before
-    public void setUp() {
+    private EntityManager entityManager = ctx.getBean(EntityManager.class);
+    private DAOImpl dao = ctx.getBean(DAOImpl.class);
+    private static boolean setUpIsDone = false;
+
+    private void initializeTableRows() {
         Category c1 = new Category("testCategory1");
         Category c2 = new Category("testCategory2");
         Price p11 = new Price(123, "12/12/2018");
@@ -49,6 +53,22 @@ public class AppTest {
         dao.addProduct(p2);
     }
 
+    @Before
+    public void setUp() {
+//        if (setUpIsDone) {
+//            initializeTableRows();
+//            return;
+//        }
+//        ctx.register(AppConfig.class);
+//        ctx.refresh();
+//        entityManager = ctx.getBean(EntityManager.class);
+//        dao = ctx.getBean(DAOImpl.class);
+//        initializeTableRows();
+//        setUpIsDone = true;
+        initializeTableRows();
+
+    }
+
     @After
     public void tearDown() {
         try {
@@ -65,7 +85,7 @@ public class AppTest {
     }
 
     @Test
-    public void getAllProducts()  {
+    public void getAllProducts() {
         List<Product> list = new ArrayList<>();
         try {
             entityManager.getTransaction().begin();

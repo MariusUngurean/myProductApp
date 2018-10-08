@@ -1,14 +1,18 @@
 package com.mungurean.productApp.module;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
-
+@Component("dao")
 public class DAOImpl {
+    @Autowired
     private EntityManager entityManager;
 
     public DAOImpl(EntityManager entityManager) {
