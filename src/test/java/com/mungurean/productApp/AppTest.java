@@ -4,10 +4,11 @@ import com.mungurean.productApp.module.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.transaction.Transactional;
 
 import java.util.*;
 
@@ -18,15 +19,13 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
  * Unit test for simple App.
  */
 
+@Transactional
 public class AppTest {
-    //    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("projectDatabase");
-//    private EntityManager entityManager = entityManagerFactory.createEntityManager();
-//    private DAOImpl dao = new DAOImpl(entityManager);
-    private AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
-    private EntityManager entityManager = ctx.getBean(EntityManager.class);
-    private DAOImpl dao = ctx.getBean(DAOImpl.class);
-    private static boolean setUpIsDone = false;
+    private EntityManagerFactory entityManagerFactory =
+            Persistence.createEntityManagerFactory("projectDatabase");
+    private EntityManager entityManager = entityManagerFactory.createEntityManager();
+    private DAOImpl dao = new DAOImpl(entityManager);
 
     private void initializeTableRows() {
         Category c1 = new Category("testCategory1");
@@ -55,21 +54,11 @@ public class AppTest {
 
     @Before
     public void setUp() {
-//        if (setUpIsDone) {
-//            initializeTableRows();
-//            return;
-//        }
-//        ctx.register(AppConfig.class);
-//        ctx.refresh();
-//        entityManager = ctx.getBean(EntityManager.class);
-//        dao = ctx.getBean(DAOImpl.class);
-//        initializeTableRows();
-//        setUpIsDone = true;
         initializeTableRows();
-
     }
 
     @After
+
     public void tearDown() {
         try {
             entityManager.getTransaction().begin();
