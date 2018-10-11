@@ -1,11 +1,11 @@
 package com.mungurean.productApp.module;
 
 
-
 import javax.persistence.EntityManager;
 
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +14,10 @@ public class DAOImpl {
 
     public DAOImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
+    }
+
+    public EntityManager getEntityManager() {
+        return entityManager;
     }
 
     //getAll methods
@@ -114,6 +118,21 @@ public class DAOImpl {
             findCategory(product.getCategory().getId()).ifPresent(category1 -> updateCategory(category1.getId(), category.getName()));
             findDescription(product.getDescription().getId()).ifPresent(description1 -> updateDescription(description1.getId(), description.getFlavorText(), product));
             updatePrices(id, prices);
+        });
+    }
+
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
+    public void updateProduct(long prodId, String name, long descrId, long categId, long[] pricesId) {
+        findProduct(prodId).ifPresent(product -> {
+            product.setName(name);
+            product.setDescription(findDescription(descrId).get());
+            product.setCategory(findCategory(categId).get());
+            List<Price> prices = new LinkedList<>();
+            for (long priceId : pricesId
+            ) {
+                prices.add(findPrice(priceId).get());
+            }
+            product.setPrices(prices);
         });
     }
 
