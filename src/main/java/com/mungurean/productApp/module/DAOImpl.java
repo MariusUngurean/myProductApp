@@ -7,6 +7,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class DAOImpl {
@@ -128,7 +129,9 @@ public class DAOImpl {
         return category.getId();
     }
 
-    public long addPrice(Price price) {
+    public long addPrice(Price price, long productId) {
+        if (productId != -1)
+            findProductById(productId).ifPresent(product -> product.addPrice(price));
         entityManager.persist(price);
         return price.getId();
     }
@@ -148,6 +151,22 @@ public class DAOImpl {
             }
             product.setPrices(prices);
         });
+    }
+
+    public void updateProductName(long productId, String newProductName) {
+        findProductById(productId).ifPresent(product -> product.setName(newProductName));
+    }
+
+    public void updateProductDescription(long productId, Description newDescription) {
+        findProductById(productId).ifPresent(product -> product.setDescription(newDescription));
+    }
+
+    public void updateProductCategory(long productId, Category category) {
+        findProductById(productId).ifPresent(product -> product.setCategory(category));
+    }
+
+    public void updateProductPrices(long productId, List<Price> prices) {
+        findProductById(productId).ifPresent(product -> product.setPrices(prices));
     }
 
     public void updateCategory(long id, String newName) {

@@ -23,7 +23,11 @@ public class Service {
         try {
             transaction.begin();
             System.out.println("Here is a list of all the products");
-            System.out.println(dao.getAllProducts());
+            List<Product> productList = dao.getAllProducts();
+            for (Product product : productList
+            ) {
+                System.out.println(product);
+            }
             transaction.commit();
         } catch (Exception e) {
             e.getStackTrace();
@@ -36,8 +40,12 @@ public class Service {
     public void showAllDescriptions() {
         try {
             transaction.begin();
-            System.out.println("Here is a list of all the products");
-            System.out.println(dao.getAllDescriptions());
+            System.out.println("Here is a list of all the descriptions");
+            List<Description> descriptionList = dao.getAllDescriptions();
+            for (Description description : descriptionList
+            ) {
+                System.out.println(description);
+            }
             transaction.commit();
         } catch (Exception e) {
             e.getStackTrace();
@@ -50,8 +58,12 @@ public class Service {
     public void showAllCategories() {
         try {
             transaction.begin();
-            System.out.println("Here is a list of all the products");
-            System.out.println(dao.getAllCategories());
+            System.out.println("Here is a list of all the categories");
+            List<Category> categoryList = dao.getAllCategories();
+            for (Category category : categoryList
+            ) {
+                System.out.println(category);
+            }
             transaction.commit();
         } catch (Exception e) {
             e.getStackTrace();
@@ -121,7 +133,7 @@ public class Service {
             for (int i = 0; i < prices.size(); i++) {
                 pricesIds[i] = (dao.findPriceByValueAndDate(prices.get(i).getPrice(), prices.get(i).getDate()).isPresent())
                         ? prices.get(i).getId()
-                        : dao.addPrice(prices.get(i));
+                        : dao.addPrice(prices.get(i), id);
             }
             dao.updateProduct(id, name, descriptionId, categoryId, pricesIds);
             transaction.commit();

@@ -61,6 +61,10 @@ public class Product {
         this.prices = prices;
     }
 
+    public void addPrice(Price price) {
+        prices.add(price);
+    }
+
     public long getId() {
         return id;
     }
