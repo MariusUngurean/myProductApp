@@ -87,6 +87,20 @@ public class DAOImpl {
         }
     }
 
+    public Optional<Description> findDescriptionByText(String flavorText) {
+        return getAllDescriptions()
+                .stream()
+                .filter(description -> description.getFlavorText().equals(flavorText))
+                .findFirst();
+    }
+
+    public Optional<Price> findPriceByValueAndTime(double value, String time) {
+        return getAllPrices()
+                .stream()
+                .filter(price -> price.getPrice() == value && price.getDate().equals(time))
+                .findFirst();
+    }
+
     //add methods
     public long addProduct(Product product) {
         if (!findCategory(product.getCategory().getId()).isPresent()) {
