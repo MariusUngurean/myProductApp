@@ -104,9 +104,24 @@ public class Service {
     }
 
     public void updateProduct(long id, String name, Description description, List<Price> prices, Category category) {
+        long descriptionId;
+        long categoryId;
+        long[] pricesIds = new long[prices.size()];
         try {
             transaction.begin();
-            dao.updateProduct(id, name, description, prices, category);
+            descriptionId = (dao.findDescriptionByText(description.getFlavorText()).isPresent())
+                    ? description.getId()
+                    : dao.addDescription(description);
+            categoryId = (dao.findCategoryByName(category.getName()).isPresent())
+                    ? category.getId()
+                    : dao.addCategory(category);
+
+            for (int i = 0; i < prices.size(); i++) {
+                pricesIds[i] = (dao.findPriceByValueAndDate(prices.get(i).getPrice(), prices.get(i).getDate()).isPresent())
+                        ? prices.get(i).getId()
+                        : dao.addPrice(prices.get(i));
+            }
+            dao.updateProduct(id, name, descriptionId, categoryId, pricesIds);
             transaction.commit();
         } catch (Exception e) {
             e.getStackTrace();
@@ -128,13 +143,13 @@ public class Service {
                 transaction.rollback();
             }
         }
-        System.out.println("Product updated");
+        System.out.println("Category updated");
     }
 
-    public void updateDescription(long id, String name, Description description, List<Price> prices, Category category) {
+    public void updateDescription(long id, String newFlavorText, Product newProduct) {
         try {
             transaction.begin();
-            dao.updateProduct(id, name, description, prices, category);
+            dao.updateDescription(id, newFlavorText, newProduct);
             transaction.commit();
         } catch (Exception e) {
             e.getStackTrace();
@@ -142,7 +157,21 @@ public class Service {
                 transaction.rollback();
             }
         }
-        System.out.println("Product updated");
+        System.out.println("Description updated");
+    }
+
+    public void updatePrice(long id, double newValue, String newDate) {
+        try {
+            transaction.begin();
+            dao.updatePrice(id, newValue, newDate);
+            transaction.commit();
+        } catch (Exception e) {
+            e.getStackTrace();
+            if (transaction != null && transaction.isActive()) {
+                transaction.rollback();
+            }
+        }
+        System.out.println("Price updated");
     }
 
 

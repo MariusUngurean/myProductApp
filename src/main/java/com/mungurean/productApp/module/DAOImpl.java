@@ -115,6 +115,11 @@ public class DAOImpl {
         return product.getId();
     }
 
+    public long addDescription(Description description) {
+        entityManager.persist(description);
+        return description.getId();
+    }
+
     public long addCategory(Category category) {
         entityManager.persist(category);
         return category.getId();
