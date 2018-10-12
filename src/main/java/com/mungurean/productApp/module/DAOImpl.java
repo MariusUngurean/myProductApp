@@ -21,6 +21,7 @@ public class DAOImpl {
     }
 
     //getAll methods
+
     public List<Product> getAllProducts() {
         TypedQuery<Product> query = entityManager.createQuery("SELECT p FROM Product p ORDER BY id ASC", Product.class);
         return query.getResultList();
@@ -44,6 +45,7 @@ public class DAOImpl {
     }
 
     //find methods
+
     private Optional<Product> findProductById(long id) {
         try {
             return Optional.ofNullable(entityManager.find(Product.class, id));
@@ -102,6 +104,7 @@ public class DAOImpl {
     }
 
     //add methods
+
     public long addProduct(Product product) {
         if (!findCategoryById(product.getCategory().getId()).isPresent()) {
             addCategory(product.getCategory());
@@ -131,6 +134,7 @@ public class DAOImpl {
     }
 
     //update methods
+
     @SuppressWarnings("OptionalGetWithoutIsPresent")
     public void updateProduct(long prodId, String newProductName, long newDescriptionId, long newCategoryId, long[] newPricesIds) {
         findProductById(prodId).ifPresent(product -> {
@@ -182,6 +186,7 @@ public class DAOImpl {
     }
 
     //delete methods
+
     public void deleteProduct(long id) {
         findProductById(id).ifPresent((product) -> {
             deleteDescription(product.getDescription().getId());

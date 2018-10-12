@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1886c3b5-84d4-40a3-86ee-e2ac9f48dbd0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,18 +45,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="22" />
-          <entry key="java" value="39301" />
+          <entry key="java" value="39654" />
           <entry key="persistence" value="57" />
           <entry key="sql" value="219" />
-          <entry key="txt" value="501" />
+          <entry key="txt" value="505" />
           <entry key="xml" value="559" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="DBN-SQL" value="219" />
-          <entry key="JAVA" value="39301" />
-          <entry key="PLAIN_TEXT" value="523" />
+          <entry key="JAVA" value="39654" />
+          <entry key="PLAIN_TEXT" value="527" />
           <entry key="XML" value="616" />
         </counts>
       </usages-collector>
@@ -89,13 +90,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="119" column="35" selection-start-line="119" selection-start-column="35" selection-end-line="119" selection-end-column="35" />
+            <state relative-caret-position="-418">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#450#451#0" expanded="true" />
+                <element signature="method#getAllProducts#0;class#DAOImpl#0" />
+                <element signature="method#getAllCategories#0;class#DAOImpl#0" />
+                <element signature="method#getAllDescriptions#0;class#DAOImpl#0" />
+                <element signature="method#getAllPrices#0;class#DAOImpl#0" />
+                <element signature="method#findProductById#0;class#DAOImpl#0" />
+                <element signature="method#findCategoryById#0;class#DAOImpl#0" />
+                <element signature="method#findCategoryByName#0;class#DAOImpl#0" />
+                <element signature="method#findDescriptionById#0;class#DAOImpl#0" />
+                <element signature="method#findPriceById#0;class#DAOImpl#0" />
+                <element signature="method#findDescriptionByText#0;class#DAOImpl#0" />
+                <element signature="method#findPriceByValueAndDate#0;class#DAOImpl#0" />
+                <element signature="method#addProduct#0;class#DAOImpl#0" />
+                <element signature="method#addDescription#0;class#DAOImpl#0" />
+                <element signature="method#addCategory#0;class#DAOImpl#0" />
+                <element signature="method#addPrice#0;class#DAOImpl#0" />
                 <element signature="e#3959#4007#0" expanded="true" />
+                <element signature="method#updateProduct#1;class#DAOImpl#0" />
+                <element signature="method#updateCategory#0;class#DAOImpl#0" />
+                <element signature="method#updateDescription#0;class#DAOImpl#0" />
+                <element signature="method#updatePrice#0;class#DAOImpl#0" />
+                <element signature="method#updatePricesList#0;class#DAOImpl#0" />
+                <element signature="method#deleteProduct#0;class#DAOImpl#0" />
+                <element signature="method#deleteCategory#0;class#DAOImpl#0" />
+                <element signature="method#deleteDescription#0;class#DAOImpl#0" />
+                <element signature="method#deletePrice#0;class#DAOImpl#0" />
+                <element signature="method#deletePrices#0;class#DAOImpl#0" />
+                <element signature="method#flushAndClear#0;class#DAOImpl#0" />
+                <element signature="method#deleteFromTable#0;class#DAOImpl#0" />
               </folding>
             </state>
           </provider>
@@ -175,10 +201,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2125">
-              <caret line="125" column="50" selection-start-line="125" selection-start-column="50" selection-end-line="125" selection-end-column="50" />
+            <state relative-caret-position="425">
+              <caret line="195" column="43" selection-start-line="195" selection-start-column="43" selection-end-line="195" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#Service#1;class#Service#0" />
+                <element signature="method#showAllProducts#0;class#Service#0" />
+                <element signature="method#showAllDescriptions#0;class#Service#0" />
+                <element signature="method#showAllCategories#0;class#Service#0" />
+                <element signature="method#showAllPrices#0;class#Service#0" />
+                <element signature="method#addProduct#0;class#Service#0" />
+                <element signature="method#addCategory#0;class#Service#0" />
+                <element signature="method#updateProduct#0;class#Service#0" />
+                <element signature="method#updateCategory#0;class#Service#0" />
+                <element signature="method#updateDescription#0;class#Service#0" />
+                <element signature="method#updatePrice#0;class#Service#0" />
+                <element signature="method#deleteProduct#0;class#Service#0" />
+                <element signature="method#deleteDescription#0;class#Service#0" />
+                <element signature="method#deleteCategory#0;class#Service#0" />
+                <element signature="method#deletePrice#0;class#Service#0" />
               </folding>
             </state>
           </provider>
@@ -402,7 +443,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539337774644" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539339333207" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/target" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -632,7 +673,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539337716698</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="...">
+      <created>1539337789613</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1539337789613</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -718,7 +766,8 @@
     <MESSAGE value="modified nomenclature for readability" />
     <MESSAGE value="locally used methods set to private" />
     <MESSAGE value="implemented updateProduct() in Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented updateProduct() in Service" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1033,23 +1082,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="119" column="35" selection-start-line="119" selection-start-column="35" selection-end-line="119" selection-end-column="35" />
+        <state relative-caret-position="-418">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#450#451#0" expanded="true" />
+            <element signature="method#getAllProducts#0;class#DAOImpl#0" />
+            <element signature="method#getAllCategories#0;class#DAOImpl#0" />
+            <element signature="method#getAllDescriptions#0;class#DAOImpl#0" />
+            <element signature="method#getAllPrices#0;class#DAOImpl#0" />
+            <element signature="method#findProductById#0;class#DAOImpl#0" />
+            <element signature="method#findCategoryById#0;class#DAOImpl#0" />
+            <element signature="method#findCategoryByName#0;class#DAOImpl#0" />
+            <element signature="method#findDescriptionById#0;class#DAOImpl#0" />
+            <element signature="method#findPriceById#0;class#DAOImpl#0" />
+            <element signature="method#findDescriptionByText#0;class#DAOImpl#0" />
+            <element signature="method#findPriceByValueAndDate#0;class#DAOImpl#0" />
+            <element signature="method#addProduct#0;class#DAOImpl#0" />
+            <element signature="method#addDescription#0;class#DAOImpl#0" />
+            <element signature="method#addCategory#0;class#DAOImpl#0" />
+            <element signature="method#addPrice#0;class#DAOImpl#0" />
             <element signature="e#3959#4007#0" expanded="true" />
+            <element signature="method#updateProduct#1;class#DAOImpl#0" />
+            <element signature="method#updateCategory#0;class#DAOImpl#0" />
+            <element signature="method#updateDescription#0;class#DAOImpl#0" />
+            <element signature="method#updatePrice#0;class#DAOImpl#0" />
+            <element signature="method#updatePricesList#0;class#DAOImpl#0" />
+            <element signature="method#deleteProduct#0;class#DAOImpl#0" />
+            <element signature="method#deleteCategory#0;class#DAOImpl#0" />
+            <element signature="method#deleteDescription#0;class#DAOImpl#0" />
+            <element signature="method#deletePrice#0;class#DAOImpl#0" />
+            <element signature="method#deletePrices#0;class#DAOImpl#0" />
+            <element signature="method#flushAndClear#0;class#DAOImpl#0" />
+            <element signature="method#deleteFromTable#0;class#DAOImpl#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
-          <caret line="125" column="50" selection-start-line="125" selection-start-column="50" selection-end-line="125" selection-end-column="50" />
+        <state relative-caret-position="425">
+          <caret line="195" column="43" selection-start-line="195" selection-start-column="43" selection-end-line="195" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Service#1;class#Service#0" />
+            <element signature="method#showAllProducts#0;class#Service#0" />
+            <element signature="method#showAllDescriptions#0;class#Service#0" />
+            <element signature="method#showAllCategories#0;class#Service#0" />
+            <element signature="method#showAllPrices#0;class#Service#0" />
+            <element signature="method#addProduct#0;class#Service#0" />
+            <element signature="method#addCategory#0;class#Service#0" />
+            <element signature="method#updateProduct#0;class#Service#0" />
+            <element signature="method#updateCategory#0;class#Service#0" />
+            <element signature="method#updateDescription#0;class#Service#0" />
+            <element signature="method#updatePrice#0;class#Service#0" />
+            <element signature="method#deleteProduct#0;class#Service#0" />
+            <element signature="method#deleteDescription#0;class#Service#0" />
+            <element signature="method#deleteCategory#0;class#Service#0" />
+            <element signature="method#deletePrice#0;class#Service#0" />
           </folding>
         </state>
       </provider>

@@ -80,13 +80,14 @@ public class Service {
             transaction.begin();
             dao.addProduct(product);
             transaction.commit();
+            System.out.println("New product added");
         } catch (Exception e) {
             e.getStackTrace();
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();
             }
         }
-        System.out.println("New product added");
+
     }
 
     public void addCategory(Category category) {
@@ -94,13 +95,14 @@ public class Service {
             transaction.begin();
             dao.addCategory(category);
             transaction.commit();
+            System.out.println("New category added");
         } catch (Exception e) {
             e.getStackTrace();
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();
             }
         }
-        System.out.println("New category added");
+
     }
 
     public void updateProduct(long id, String name, Description description, List<Price> prices, Category category) {
@@ -176,6 +178,58 @@ public class Service {
             }
         }
 
+    }
+
+    public void deleteProduct(long id) {
+        try {
+            transaction.begin();
+            dao.deleteProduct(id);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null && transaction.isActive()) {
+                transaction.rollback();
+            }
+        }
+    }
+
+    public void deleteDescription(long id) {
+        try {
+            transaction.begin();
+            dao.deleteDescription(id);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null && transaction.isActive()) {
+                transaction.rollback();
+            }
+        }
+    }
+
+    public void deleteCategory(long id) {
+        try {
+            transaction.begin();
+            dao.deleteCategory(id);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null && transaction.isActive()) {
+                transaction.rollback();
+            }
+        }
+    }
+
+    public void deletePrice(long id) {
+        try {
+            transaction.begin();
+            dao.deletePrice(id);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null && transaction.isActive()) {
+                transaction.rollback();
+            }
+        }
     }
 
 
