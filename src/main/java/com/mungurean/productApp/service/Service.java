@@ -123,13 +123,14 @@ public class Service {
             }
             dao.updateProduct(id, name, descriptionId, categoryId, pricesIds);
             transaction.commit();
+            System.out.println("Product updated");
         } catch (Exception e) {
             e.getStackTrace();
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();
             }
         }
-        System.out.println("Product updated");
+
     }
 
     public void updateCategory(long id, String name) {
@@ -137,13 +138,14 @@ public class Service {
             transaction.begin();
             dao.updateCategory(id, name);
             transaction.commit();
+            System.out.println("Category updated");
         } catch (Exception e) {
             e.getStackTrace();
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();
             }
         }
-        System.out.println("Category updated");
+
     }
 
     public void updateDescription(long id, String newFlavorText, Product newProduct) {
@@ -151,13 +153,14 @@ public class Service {
             transaction.begin();
             dao.updateDescription(id, newFlavorText, newProduct);
             transaction.commit();
+            System.out.println("Description updated");
         } catch (Exception e) {
             e.getStackTrace();
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();
             }
         }
-        System.out.println("Description updated");
+
     }
 
     public void updatePrice(long id, double newValue, String newDate) {
@@ -165,13 +168,14 @@ public class Service {
             transaction.begin();
             dao.updatePrice(id, newValue, newDate);
             transaction.commit();
+            System.out.println("Price updated");
         } catch (Exception e) {
             e.getStackTrace();
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();
             }
         }
-        System.out.println("Price updated");
+
     }
 
 
