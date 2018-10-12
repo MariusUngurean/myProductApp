@@ -44,7 +44,7 @@ public class DAOImpl {
     }
 
     //find methods
-    public Optional<Product> findProduct(long id) {
+    public Optional<Product> findProductById(long id) {
         try {
             return Optional.ofNullable(entityManager.find(Product.class, id));
         } catch (Exception e) {
@@ -53,7 +53,7 @@ public class DAOImpl {
         }
     }
 
-    public Optional<Category> findCategory(long id) {
+    public Optional<Category> findCategoryById(long id) {
         try {
             return Optional.ofNullable(entityManager.find(Category.class, id));
         } catch (Exception e) {
@@ -62,14 +62,14 @@ public class DAOImpl {
         }
     }
 
-    public Optional<Category> findCategory(String name) {
+    public Optional<Category> findCategoryByName(String name) {
         return getAllCategories()
                 .stream()
                 .filter((category) -> category.getName().equals(name))
                 .findFirst();
     }
 
-    public Optional<Description> findDescription(long id) {
+    public Optional<Description> findDescriptionById(long id) {
         try {
             return Optional.ofNullable(entityManager.find(Description.class, id));
         } catch (Exception e) {
@@ -78,7 +78,7 @@ public class DAOImpl {
         }
     }
 
-    public Optional<Price> findPrice(long id) {
+    public Optional<Price> findPriceById(long id) {
         try {
             return Optional.of(entityManager.find(Price.class, id));
         } catch (Exception e) {
@@ -94,16 +94,16 @@ public class DAOImpl {
                 .findFirst();
     }
 
-    public Optional<Price> findPriceByValueAndTime(double value, String time) {
+    public Optional<Price> findPriceByValueAndDate(double value, String date) {
         return getAllPrices()
                 .stream()
-                .filter(price -> price.getPrice() == value && price.getDate().equals(time))
+                .filter(price -> price.getPrice() == value && price.getDate().equals(date))
                 .findFirst();
     }
 
     //add methods
     public long addProduct(Product product) {
-        if (!findCategory(product.getCategory().getId()).isPresent()) {
+        if (!findCategoryById(product.getCategory().getId()).isPresent()) {
             addCategory(product.getCategory());
         }
         product.getDescription().setProduct(product);
@@ -126,59 +126,50 @@ public class DAOImpl {
     }
 
     //update methods
-    public void updateProduct(long id, String name, Description description, List<Price> prices, Category category) {
-        findProduct(id).ifPresent(product -> {
-            product.setName(name);
-            findCategory(product.getCategory().getId()).ifPresent(category1 -> updateCategory(category1.getId(), category.getName()));
-            findDescription(product.getDescription().getId()).ifPresent(description1 -> updateDescription(description1.getId(), description.getFlavorText(), product));
-            updatePrices(id, prices);
-        });
-    }
-
     @SuppressWarnings("OptionalGetWithoutIsPresent")
-    public void updateProduct(long prodId, String name, long descrId, long categId, long[] pricesId) {
-        findProduct(prodId).ifPresent(product -> {
-            product.setName(name);
-            product.setDescription(findDescription(descrId).get());
-            product.setCategory(findCategory(categId).get());
+    public void updateProduct(long prodId, String newProductName, long newDescriptionId, long newCategoryId, long[] newPricesIds) {
+        findProductById(prodId).ifPresent(product -> {
+            product.setName(newProductName);
+            product.setDescription(findDescriptionById(newDescriptionId).get());
+            product.setCategory(findCategoryById(newCategoryId).get());
             List<Price> prices = new LinkedList<>();
-            for (long priceId : pricesId
+            for (long priceId : newPricesIds
             ) {
-                prices.add(findPrice(priceId).get());
+                prices.add(findPriceById(priceId).get());
             }
             product.setPrices(prices);
         });
     }
 
-    public void updateCategory(long id, String name) {
-        findCategory(id).ifPresent(category -> category.setName(name));
+    public void updateCategory(long id, String newName) {
+        findCategoryById(id).ifPresent(category -> category.setName(newName));
     }
 
-    public void updateDescription(long id, String text, Product product) {
-        findDescription(id).ifPresent(description -> {
-            description.setFlavorText(text);
+    public void updateDescription(long id, String newFlavorText, Product newProduct) {
+        findDescriptionById(id).ifPresent(description -> {
+            description.setFlavorText(newFlavorText);
             description.getProduct().setDescription(null);
-            description.setProduct(product);
-            product.setDescription(description);
+            description.setProduct(newProduct);
+            newProduct.setDescription(description);
         });
     }
 
-    public void updatePrice(long id, Double price, String date) {
-        findPrice(id).ifPresent(price1 -> {
-            price1.setPrice(price);
-            price1.setDate(date);
+    public void updatePrice(long id, Double newPrice, String newDate) {
+        findPriceById(id).ifPresent(price1 -> {
+            price1.setPrice(newPrice);
+            price1.setDate(newDate);
         });
 
     }
 
-    public void updatePrices(long id, List<Price> prices) {
-        findProduct(id).ifPresent(product -> {
-            if (prices.size() == 0 || product.getPrices().size() == 0) {
+    public void updatePricesList(long id, List<Price> newPricesList) {
+        findProductById(id).ifPresent(product -> {
+            if (newPricesList.size() == 0 || product.getPrices().size() == 0) {
                 return;
             }
             List<Price> productPrices = product.getPrices();
             for (int i = 0; i < productPrices.size(); i++) {
-                Price p = prices.get(i);
+                Price p = newPricesList.get(i);
                 updatePrice(productPrices.get(i).getId(), p.getPrice(), p.getDate());
             }
         });
@@ -187,7 +178,7 @@ public class DAOImpl {
 
     //delete methods
     public void deleteProduct(long id) {
-        findProduct(id).ifPresent((product) -> {
+        findProductById(id).ifPresent((product) -> {
             deleteDescription(product.getDescription().getId());
             deletePrices(product.getPrices());
             entityManager.remove(product);
@@ -195,7 +186,7 @@ public class DAOImpl {
     }
 
     public void deleteCategory(long id) {
-        findCategory(id).ifPresent((category) -> {
+        findCategoryById(id).ifPresent((category) -> {
             for (Product p : getAllProducts()
             ) {
                 if (p.getCategory().equals(category)) {
@@ -207,14 +198,14 @@ public class DAOImpl {
     }
 
     public void deleteDescription(long id) {
-        findDescription(id).ifPresent((description) -> {
+        findDescriptionById(id).ifPresent((description) -> {
             description.getProduct().setDescription(null);
             entityManager.remove(description);
         });
     }
 
     public void deletePrice(long id) {
-        findPrice(id).ifPresent((price) -> {
+        findPriceById(id).ifPresent((price) -> {
             price.getProduct().removePrice(price);
             entityManager.remove(price);
         });
@@ -222,10 +213,10 @@ public class DAOImpl {
 
     public void deletePrices(List<Price> prices) {
         int batch = 0;
-        for (Price p : prices
+        for (Price price : prices
         ) {
-            entityManager.remove(p);
-            p.setProduct(null);
+            entityManager.remove(price);
+            price.setProduct(null);
             batch++;
             if (batch % 100 == 0) {
                 flushAndClear();
@@ -240,8 +231,8 @@ public class DAOImpl {
 
     //deleteFromTable method
 
-    public void deleteFromTable(String table) {
-        Query query = entityManager.createQuery("DELETE FROM " + table);
+    public void deleteFromTable(String tableName) {
+        Query query = entityManager.createQuery("DELETE FROM " + tableName);
         query.executeUpdate();
     }
 
