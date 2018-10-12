@@ -44,7 +44,7 @@ public class DAOImpl {
     }
 
     //find methods
-    public Optional<Product> findProductById(long id) {
+    private Optional<Product> findProductById(long id) {
         try {
             return Optional.ofNullable(entityManager.find(Product.class, id));
         } catch (Exception e) {
@@ -53,7 +53,7 @@ public class DAOImpl {
         }
     }
 
-    public Optional<Category> findCategoryById(long id) {
+    private Optional<Category> findCategoryById(long id) {
         try {
             return Optional.ofNullable(entityManager.find(Category.class, id));
         } catch (Exception e) {
@@ -69,7 +69,7 @@ public class DAOImpl {
                 .findFirst();
     }
 
-    public Optional<Description> findDescriptionById(long id) {
+    private Optional<Description> findDescriptionById(long id) {
         try {
             return Optional.ofNullable(entityManager.find(Description.class, id));
         } catch (Exception e) {
@@ -78,7 +78,7 @@ public class DAOImpl {
         }
     }
 
-    public Optional<Price> findPriceById(long id) {
+    private Optional<Price> findPriceById(long id) {
         try {
             return Optional.of(entityManager.find(Price.class, id));
         } catch (Exception e) {
@@ -211,7 +211,7 @@ public class DAOImpl {
         });
     }
 
-    public void deletePrices(List<Price> prices) {
+    private void deletePrices(List<Price> prices) {
         int batch = 0;
         for (Price price : prices
         ) {

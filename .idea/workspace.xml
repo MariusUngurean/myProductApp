@@ -47,7 +47,7 @@
           <entry key="java" value="38297" />
           <entry key="persistence" value="57" />
           <entry key="sql" value="219" />
-          <entry key="txt" value="342" />
+          <entry key="txt" value="385" />
           <entry key="xml" value="559" />
         </counts>
       </usages-collector>
@@ -55,7 +55,7 @@
         <counts>
           <entry key="DBN-SQL" value="219" />
           <entry key="JAVA" value="38297" />
-          <entry key="PLAIN_TEXT" value="364" />
+          <entry key="PLAIN_TEXT" value="407" />
           <entry key="XML" value="616" />
         </counts>
       </usages-collector>
@@ -89,8 +89,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3927">
-              <caret line="233" column="48" selection-start-line="233" selection-start-column="48" selection-end-line="233" selection-end-column="48" />
+            <state relative-caret-position="306">
+              <caret line="212" lean-forward="true" selection-start-line="212" selection-end-line="212" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#414#415#0" expanded="true" />
@@ -402,7 +402,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539336278647" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539336376454" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/target" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -611,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539335757707</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="modified nomenclature for readability">
+      <created>1539336309445</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1539336309445</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -694,7 +701,8 @@
     <MESSAGE value="reverted back to JPA without Spring" />
     <MESSAGE value="added updateProduct with IDs method" />
     <MESSAGE value="added findDescriptionByName() and findPriceByValueAndTime()" />
-    <option name="LAST_COMMIT_MESSAGE" value="added findDescriptionByName() and findPriceByValueAndTime()" />
+    <MESSAGE value="modified nomenclature for readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified nomenclature for readability" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1019,8 +1027,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3927">
-          <caret line="233" column="48" selection-start-line="233" selection-start-column="48" selection-end-line="233" selection-end-column="48" />
+        <state relative-caret-position="306">
+          <caret line="212" lean-forward="true" selection-start-line="212" selection-end-line="212" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#414#415#0" expanded="true" />
