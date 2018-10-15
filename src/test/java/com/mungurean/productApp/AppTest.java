@@ -34,8 +34,8 @@ public class AppTest {
         Price p12 = new Price(321, "10/12/2018");
         Price p21 = new Price(265, "20/05/2018");
         Price p22 = new Price(756, "06/02/2018");
-        List<Price> ps1 = new ArrayList<>();
-        List<Price> ps2 = new ArrayList<>();
+        Set<Price> ps1 = new LinkedHashSet<>();
+        Set<Price> ps2 = new LinkedHashSet<>();
         ps1.add(p11);
         ps1.add(p12);
         ps2.add(p21);
@@ -44,10 +44,10 @@ public class AppTest {
         Description d2 = new Description("testDescription2");
         Product p1 = new Product("testName1", d1, ps1, c1);
         Product p2 = new Product("testName2", d2, ps2, c2);
-        dao.addPrice(p11);
-        dao.addPrice(p12);
-        dao.addPrice(p21);
-        dao.addPrice(p22);
+        dao.addPrice(p11, -1);
+        dao.addPrice(p12, -1);
+        dao.addPrice(p21, -1);
+        dao.addPrice(p22, -1);
         dao.addProduct(p1);
         dao.addProduct(p2);
     }
@@ -133,7 +133,7 @@ public class AppTest {
     public void addProduct() {
         Product p = new Product("name1",
                 new Description("descr1"),
-                new ArrayList<>(),
+                new LinkedHashSet<>(),
                 new Category("cat1"));
         try {
             entityManager.getTransaction().begin();
@@ -165,7 +165,7 @@ public class AppTest {
         Description d = new Description("description1");
         try {
             entityManager.getTransaction().begin();
-            Product p = new Product("name1", d, new ArrayList<>(), new Category("test"));
+            Product p = new Product("name1", d, new LinkedHashSet<>(), new Category("test"));
             d.setProduct(p);
             dao.addProduct(p);
             entityManager.getTransaction().commit();
@@ -181,7 +181,7 @@ public class AppTest {
         Price p = new Price(123, "02/10/2018");
         try {
             entityManager.getTransaction().begin();
-            dao.addPrice(p);
+            dao.addPrice(p, -1);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -245,23 +245,32 @@ public class AppTest {
     @Test
     public void updateProduct() {
         Product p = new Product();
-        Description d = new Description("newDescription");
-        List<Price> pr = Arrays.asList(new Price(456, "22/10/2018"), new Price(789, "10/05/2018"));
+        String flavorText = "newDescription";
+
+        Price price1 = new Price(456, "22/10/2018");
+        Price price2 = new Price(789, "10/05/2018");
+        Set<Price> pr = new HashSet<>();
+        pr.add(price1);
+        pr.add(price2);
         Category c = new Category("newCategory");
+
         try {
             entityManager.getTransaction().begin();
             p = dao.getAllProducts().get(0);
-            dao.updateProduct(p.getId(), "newName", d, pr, c);
+            dao.updateProductName(p.getId(), "newName");
+            dao.updateProductDescription(p.getId(), flavorText);
+            dao.addCategory(c);
+            dao.updateProductCategory(p.getId(), c);
+            dao.updateProductPrices(p.getId(), pr);
             entityManager.getTransaction().commit();
+
         } catch (Exception e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
         }
         assertThat(p.getName()).isEqualToIgnoringCase("newName");
-        assertThat(p.getDescription().getFlavorText()).isEqualTo(d.getFlavorText());
-        for (int i = 0; i < p.getPrices().size(); i++) {
-            assertThat(p.getPrices().get(i).getPrice()).isEqualTo(pr.get(i).getPrice());
-        }
+        assertThat(p.getDescription().getFlavorText()).isEqualTo(flavorText);
+        assertThat(p.getPrices()).containsExactly(price1, price2);
         assertThat(p.getCategory().getName()).isEqualTo(c.getName());
     }
 
@@ -322,7 +331,7 @@ public class AppTest {
     public void deleteProduct() {
         Product p = new Product();
         Description d = new Description();
-        List<Price> pr = new ArrayList<>();
+        Set<Price> pr = new HashSet<>();
         try {
             entityManager.getTransaction().begin();
             p = dao.getAllProducts().get(0);

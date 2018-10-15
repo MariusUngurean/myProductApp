@@ -2,7 +2,7 @@ package com.mungurean.productApp.module;
 
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "product")
@@ -19,7 +19,7 @@ public class Product {
 
     // one to many prices-time
     @OneToMany(mappedBy = "product")
-    private List<Price> prices;
+    private Set<Price> prices;
     //many to one product-category
     @ManyToOne
     @JoinColumn(name = "category", referencedColumnName = "id")
@@ -34,7 +34,7 @@ public class Product {
     }
 
 
-    public Product(String name, Description description, List<Price> prices, Category category) {
+    public Product(String name, Description description, Set<Price> prices, Category category) {
         this.category = category;
         this.name = name;
         this.description = description;
@@ -45,32 +45,28 @@ public class Product {
         return category;
     }
 
-    public void setCategory(Category category) {
+    void setCategory(Category category) {
         this.category = category;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public void setDescription(Description description) {
+    void setDescription(Description description) {
         this.description = description;
     }
 
-    public void setPrices(List<Price> prices) {
+    void setPrices(Set<Price> prices) {
         this.prices = prices;
     }
 
-    public void addPrice(Price price) {
+    void addPrice(Price price) {
         prices.add(price);
     }
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -81,7 +77,7 @@ public class Product {
         return description;
     }
 
-    public List<Price> getPrices() {
+    public Set<Price> getPrices() {
         return prices;
     }
 
@@ -99,12 +95,16 @@ public class Product {
         return false;
     }
 
-    public void removePrice(Price price) {
+    void removePrice(Price price) {
         for (Price p : prices
         ) {
             if (p.equals(price)) {
                 prices.remove(p);
             }
         }
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

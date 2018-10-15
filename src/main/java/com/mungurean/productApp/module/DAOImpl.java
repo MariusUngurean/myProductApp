@@ -5,10 +5,7 @@ import javax.persistence.EntityManager;
 
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+import java.util.*;
 
 public class DAOImpl {
     private EntityManager entityManager;
@@ -106,7 +103,7 @@ public class DAOImpl {
 
     //add methods
 
-    public long addProduct(Product product) {
+    public void addProduct(Product product) {
         if (!findCategoryById(product.getCategory().getId()).isPresent()) {
             addCategory(product.getCategory());
         }
@@ -116,7 +113,6 @@ public class DAOImpl {
             p.setProduct(product);
         }
         entityManager.persist(product);
-        return product.getId();
     }
 
     public long addDescription(Description description) {
@@ -139,17 +135,18 @@ public class DAOImpl {
     //update methods
 
     @SuppressWarnings("OptionalGetWithoutIsPresent")
-    public void updateProduct(long prodId, String newProductName, long newDescriptionId, long newCategoryId, long[] newPricesIds) {
+    public void updateProduct(long prodId, String newProductName, String newDescriptionFlavorText, long newCategoryId, long[] newPricesIds) {
         findProductById(prodId).ifPresent(product -> {
             product.setName(newProductName);
-            product.setDescription(findDescriptionById(newDescriptionId).get());
-            product.setCategory(findCategoryById(newCategoryId).get());
-            List<Price> prices = new LinkedList<>();
+            product.getDescription().setFlavorText(newDescriptionFlavorText);
+            findCategoryById(newCategoryId).ifPresent(product::setCategory);
+            Set<Price> prices = new LinkedHashSet<>();
             for (long priceId : newPricesIds
             ) {
-                prices.add(findPriceById(priceId).get());
+                findPriceById(priceId).ifPresent(prices::add);
             }
             product.setPrices(prices);
+
         });
     }
 
@@ -157,15 +154,18 @@ public class DAOImpl {
         findProductById(productId).ifPresent(product -> product.setName(newProductName));
     }
 
-    public void updateProductDescription(long productId, Description newDescription) {
-        findProductById(productId).ifPresent(product -> product.setDescription(newDescription));
+    public void updateProductDescription(long productId, String newDescriptionText) {
+        findProductById(productId).ifPresent(product -> product.getDescription().setFlavorText(newDescriptionText));
     }
 
     public void updateProductCategory(long productId, Category category) {
-        findProductById(productId).ifPresent(product -> product.setCategory(category));
+        findProductById(productId).ifPresent(product -> {
+            long categoryId = findCategoryByName(category.getName()).isPresent() ? category.getId() : addCategory(category);
+            findCategoryById(categoryId).ifPresent(product::setCategory);
+        });
     }
 
-    public void updateProductPrices(long productId, List<Price> prices) {
+    public void updateProductPrices(long productId, Set<Price> prices) {
         findProductById(productId).ifPresent(product -> product.setPrices(prices));
     }
 
@@ -190,19 +190,6 @@ public class DAOImpl {
 
     }
 
-    public void updatePricesList(long id, List<Price> newPricesList) {
-        findProductById(id).ifPresent(product -> {
-            if (newPricesList.size() == 0 || product.getPrices().size() == 0) {
-                return;
-            }
-            List<Price> productPrices = product.getPrices();
-            for (int i = 0; i < productPrices.size(); i++) {
-                Price p = newPricesList.get(i);
-                updatePrice(productPrices.get(i).getId(), p.getPrice(), p.getDate());
-            }
-        });
-
-    }
 
     //delete methods
 
@@ -240,7 +227,7 @@ public class DAOImpl {
         });
     }
 
-    private void deletePrices(List<Price> prices) {
+    private void deletePrices(Set<Price> prices) {
         int batch = 0;
         for (Price price : prices
         ) {

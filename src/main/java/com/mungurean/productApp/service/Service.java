@@ -117,15 +117,11 @@ public class Service {
 
     }
 
-    public void updateProduct(long id, String name, Description description, List<Price> prices, Category category) {
-        long descriptionId;
+    public void updateProduct(long id, String name, String descriptionFlavorText, List<Price> prices, Category category) {
         long categoryId;
         long[] pricesIds = new long[prices.size()];
         try {
             transaction.begin();
-            descriptionId = (dao.findDescriptionByText(description.getFlavorText()).isPresent())
-                    ? description.getId()
-                    : dao.addDescription(description);
             categoryId = (dao.findCategoryByName(category.getName()).isPresent())
                     ? category.getId()
                     : dao.addCategory(category);
@@ -135,7 +131,7 @@ public class Service {
                         ? prices.get(i).getId()
                         : dao.addPrice(prices.get(i), id);
             }
-            dao.updateProduct(id, name, descriptionId, categoryId, pricesIds);
+            dao.updateProduct(id, name, descriptionFlavorText, categoryId, pricesIds);
             transaction.commit();
             System.out.println("Product updated");
         } catch (Exception e) {

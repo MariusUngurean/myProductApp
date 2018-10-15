@@ -34,7 +34,7 @@ public class Price {
         return product;
     }
 
-    public void setProduct(Product product) {
+    void setProduct(Product product) {
         this.product = product;
     }
 
@@ -50,7 +50,7 @@ public class Price {
         return price;
     }
 
-    public void setPrice(double price) {
+    void setPrice(double price) {
         this.price = price;
     }
 
@@ -58,7 +58,7 @@ public class Price {
         return date;
     }
 
-    public void setDate(String date) {
+    void setDate(String date) {
         this.date = date;
     }
 

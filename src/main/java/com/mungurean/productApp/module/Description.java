@@ -41,7 +41,7 @@ public class Description {
         return flavorText;
     }
 
-    public void setFlavorText(String flavorText) {
+    void setFlavorText(String flavorText) {
         this.flavorText = flavorText;
     }
 
