@@ -328,7 +328,7 @@ public class AppTest {
     }
 
     @Test
-    public void deleteProduct() {
+    public void deleteProduct(){
         Product p = new Product();
         Description d = new Description();
         Set<Price> pr = new HashSet<>();
