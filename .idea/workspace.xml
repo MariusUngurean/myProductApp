@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1886c3b5-84d4-40a3-86ee-e2ac9f48dbd0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/DAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/DAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/Description.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/Description.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/Price.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/Price.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/service/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/service/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/view/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mungurean/productApp/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mungurean/productApp/AppTest.class" afterDir="false" />
-    </list>
+    <list default="true" id="1886c3b5-84d4-40a3-86ee-e2ac9f48dbd0" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/" />
@@ -358,111 +347,10 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="productApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="productApp" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="productApp" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="productApp" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="productapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="productApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539609697398" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539609877699" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -720,7 +608,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539608667318</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="...">
+      <created>1539609667346</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1539609667346</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -756,7 +651,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.22163388" />
