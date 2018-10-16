@@ -141,22 +141,6 @@ public class DAOImpl {
 
     //update methods
 
-    @SuppressWarnings("OptionalGetWithoutIsPresent")
-    public void updateProduct(long prodId, String newProductName, String newDescriptionFlavorText, long newCategoryId, long[] newPricesIds) {
-        findProductById(prodId).ifPresent(product -> {
-            product.setName(newProductName);
-            product.getDescription().setFlavorText(newDescriptionFlavorText);
-            findCategoryById(newCategoryId).ifPresent(product::setCategory);
-            Set<Price> prices = new LinkedHashSet<>();
-            for (long priceId : newPricesIds
-            ) {
-                findPriceById(priceId).ifPresent(prices::add);
-            }
-            product.setPrices(prices);
-
-        });
-    }
-
     public void updateProduct(long productId, String newProductName, String newDescriptionFlavourText, Category newCategory, Set<Price> newPriceSet) {
         findProductById(productId).ifPresent(product -> {
             if (!newProductName.equals("")) {

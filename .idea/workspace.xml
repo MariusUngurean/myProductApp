@@ -4,7 +4,11 @@
     <list default="true" id="1886c3b5-84d4-40a3-86ee-e2ac9f48dbd0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/DAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/module/DAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/service/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mungurean/productApp/service/Service.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mungurean/productApp/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mungurean/productApp/AppTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,18 +51,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="22" />
-          <entry key="java" value="44862" />
+          <entry key="java" value="44879" />
           <entry key="persistence" value="57" />
           <entry key="sql" value="219" />
-          <entry key="txt" value="540" />
+          <entry key="txt" value="613" />
           <entry key="xml" value="559" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="DBN-SQL" value="219" />
-          <entry key="JAVA" value="44862" />
-          <entry key="PLAIN_TEXT" value="562" />
+          <entry key="JAVA" value="44879" />
+          <entry key="PLAIN_TEXT" value="635" />
           <entry key="XML" value="616" />
         </counts>
       </usages-collector>
@@ -126,8 +130,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="245" column="47" selection-start-line="245" selection-start-column="47" selection-end-line="245" selection-end-column="47" />
+            <state relative-caret-position="493">
+              <caret line="301" column="42" selection-start-line="301" selection-start-column="42" selection-end-line="301" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#initializeTableRows#0;class#AppTest#0" />
@@ -144,8 +148,6 @@
                 <element signature="method#deleteAllFromPrice#0;class#AppTest#0" />
                 <element signature="method#deleteAllFromCategory#0;class#AppTest#0" />
                 <element signature="method#deleteAllFromDescription#0;class#AppTest#0" />
-                <element signature="method#updateProductWithNewEntities#0;class#AppTest#0" />
-                <element signature="method#updateProductCategoryAndPriceSet#0;class#AppTest#0" />
                 <element signature="method#updateProductNameAndDescription#0;class#AppTest#0" />
                 <element signature="method#updateCategory#0;class#AppTest#0" />
                 <element signature="method#updateDescription#0;class#AppTest#0" />
@@ -162,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="133" column="61" selection-start-line="133" selection-start-column="61" selection-end-line="133" selection-end-column="61" />
+            <state relative-caret-position="323">
+              <caret line="143" column="7" lean-forward="true" selection-start-line="119" selection-start-column="5" selection-end-line="143" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Service#0;class#Service#0" />
@@ -198,7 +200,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="119">
               <caret line="7" column="110" selection-start-line="7" selection-start-column="110" selection-end-line="7" selection-end-column="110" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -219,8 +221,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="163" column="13" selection-start-line="163" selection-start-column="13" selection-end-line="163" selection-end-column="13" />
+            <state relative-caret-position="46">
+              <caret line="141" column="20" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getAllProducts#0;class#DAOImpl#0" />
@@ -309,8 +311,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Category.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Description.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java" />
       </list>
     </option>
@@ -354,7 +356,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539685725512" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539685965131" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -390,7 +392,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.updateProductNameAndDescription">
+  <component name="RunManager" selected="JUnit.AppTest">
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="productapp" />
       <extension name="coverage">
@@ -478,10 +480,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.updateProductNameAndDescription" />
+        <item itemvalue="JUnit.AppTest" />
         <item itemvalue="JUnit.AppTest.updateProductCategoryAndPriceSet" />
         <item itemvalue="JUnit.AppTest.updateProductWithNewEntities" />
-        <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="JUnit.AppTest.updateProductNameAndDescription" />
         <item itemvalue="JUnit.AppTest.updateProduct" />
       </list>
     </recent_temporary>
@@ -626,22 +628,17 @@
       <option name="project" value="LOCAL" />
       <updated>1539612346514</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="modified updatePrice to generalise use for updates on any nr of columns">
+      <created>1539685764278</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1539685764278</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AppTest_updateProductWithNewEntities - 2018.10.16 at 13h 13m 02s.xml">
-      <configuration name="AppTest.updateProductWithNewEntities" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppTest_updateProductWithNewEntities - 2018.10.16 at 13h 13m 42s.xml">
-      <configuration name="AppTest.updateProductWithNewEntities" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppTest_updateProductWithNewEntities - 2018.10.16 at 13h 15m 48s.xml">
-      <configuration name="AppTest.updateProductWithNewEntities" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppTest_updateProductWithNewEntities - 2018.10.16 at 13h 18m 53s.xml">
-      <configuration name="AppTest.updateProductWithNewEntities" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AppTest_updateProductWithNewEntities - 2018.10.16 at 13h 20m 35s.xml">
       <configuration name="AppTest.updateProductWithNewEntities" configurationId="JUnit" />
     </history-entry>
@@ -659,6 +656,18 @@
     </history-entry>
     <history-entry file="AppTest_updateProductNameAndDescription - 2018.10.16 at 13h 28m 08s.xml">
       <configuration name="AppTest.updateProductNameAndDescription" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest - 2018.10.16 at 13h 30m 15s.xml">
+      <configuration name="AppTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_updateProductWithNewEntities - 2018.10.16 at 13h 31m 29s.xml">
+      <configuration name="AppTest.updateProductWithNewEntities" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_updateProductCategoryAndPriceSet - 2018.10.16 at 13h 31m 40s.xml">
+      <configuration name="AppTest.updateProductCategoryAndPriceSet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest - 2018.10.16 at 13h 31m 57s.xml">
+      <configuration name="AppTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -714,7 +723,8 @@
     <MESSAGE value="implemented updateProduct() in Service" />
     <MESSAGE value="added delete methods to Service" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="modified updatePrice to generalise use for updates on any nr of columns" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified updatePrice to generalise use for updates on any nr of columns" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -961,45 +971,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="133" column="61" selection-start-line="133" selection-start-column="61" selection-end-line="133" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Service#0;class#Service#0" />
-            <element signature="method#Service#1;class#Service#0" />
-            <element signature="method#showAllProducts#0;class#Service#0" />
-            <element signature="method#showAllDescriptions#0;class#Service#0" />
-            <element signature="method#showAllCategories#0;class#Service#0" />
-            <element signature="method#showAllPrices#0;class#Service#0" />
-            <element signature="method#addProduct#0;class#Service#0" />
-            <element signature="method#addCategory#0;class#Service#0" />
-            <element signature="method#updateCategory#0;class#Service#0" />
-            <element signature="method#updateDescription#0;class#Service#0" />
-            <element signature="method#updatePrice#0;class#Service#0" />
-            <element signature="method#deleteProduct#0;class#Service#0" />
-            <element signature="method#deleteDescription#0;class#Service#0" />
-            <element signature="method#deleteCategory#0;class#Service#0" />
-            <element signature="method#deletePrice#0;class#Service#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="110" selection-start-line="7" selection-start-column="110" selection-end-line="7" selection-end-column="110" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1012,8 +987,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="163" column="13" selection-start-line="163" selection-start-column="13" selection-end-line="163" selection-end-column="13" />
+        <state relative-caret-position="46">
+          <caret line="141" column="20" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getAllProducts#0;class#DAOImpl#0" />
@@ -1041,10 +1016,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="143" column="7" lean-forward="true" selection-start-line="119" selection-start-column="5" selection-end-line="143" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Service#0;class#Service#0" />
+            <element signature="method#Service#1;class#Service#0" />
+            <element signature="method#showAllProducts#0;class#Service#0" />
+            <element signature="method#showAllDescriptions#0;class#Service#0" />
+            <element signature="method#showAllCategories#0;class#Service#0" />
+            <element signature="method#showAllPrices#0;class#Service#0" />
+            <element signature="method#addProduct#0;class#Service#0" />
+            <element signature="method#addCategory#0;class#Service#0" />
+            <element signature="method#updateCategory#0;class#Service#0" />
+            <element signature="method#updateDescription#0;class#Service#0" />
+            <element signature="method#updatePrice#0;class#Service#0" />
+            <element signature="method#deleteProduct#0;class#Service#0" />
+            <element signature="method#deleteDescription#0;class#Service#0" />
+            <element signature="method#deleteCategory#0;class#Service#0" />
+            <element signature="method#deletePrice#0;class#Service#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="110" selection-start-line="7" selection-start-column="110" selection-end-line="7" selection-end-column="110" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="245" column="47" selection-start-line="245" selection-start-column="47" selection-end-line="245" selection-end-column="47" />
+        <state relative-caret-position="493">
+          <caret line="301" column="42" selection-start-line="301" selection-start-column="42" selection-end-line="301" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initializeTableRows#0;class#AppTest#0" />
@@ -1061,8 +1071,6 @@
             <element signature="method#deleteAllFromPrice#0;class#AppTest#0" />
             <element signature="method#deleteAllFromCategory#0;class#AppTest#0" />
             <element signature="method#deleteAllFromDescription#0;class#AppTest#0" />
-            <element signature="method#updateProductWithNewEntities#0;class#AppTest#0" />
-            <element signature="method#updateProductCategoryAndPriceSet#0;class#AppTest#0" />
             <element signature="method#updateProductNameAndDescription#0;class#AppTest#0" />
             <element signature="method#updateCategory#0;class#AppTest#0" />
             <element signature="method#updateDescription#0;class#AppTest#0" />

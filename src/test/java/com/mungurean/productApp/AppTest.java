@@ -252,14 +252,14 @@ public class AppTest {
         Set<Price> priceHashSet = new HashSet<>();
         priceHashSet.add(price1);
         priceHashSet.add(price2);
-        Category c = new Category("newCategory");
+        Category category = new Category("newCategory");
         Set<Price> oldPrices = new HashSet<>();
 
         try {
             entityManager.getTransaction().begin();
             product = dao.getAllProducts().get(0);
             oldPrices.addAll(product.getPrices());
-            dao.updateProduct(product.getId(), newName, flavorText, c, priceHashSet);
+            dao.updateProduct(product.getId(), newName, flavorText, category, priceHashSet);
             entityManager.getTransaction().commit();
 
         } catch (Exception e) {
@@ -268,8 +268,8 @@ public class AppTest {
         }
         assertThat(product.getName()).isEqualToIgnoringCase("newName");
         assertThat(product.getDescription().getFlavorText()).isEqualTo(flavorText);
-        assertThat(product.getPrices()).containsExactly(price1, price2);
-        assertThat(product.getCategory().getName()).isEqualTo(c.getName());
+        assertThat(product.getPrices()).contains(price1, price2);
+        assertThat(product.getCategory().getName()).isEqualTo(category.getName());
         assertThat(dao.getAllPrices()).doesNotContainAnyElementsOf(oldPrices);
     }
 
@@ -299,7 +299,7 @@ public class AppTest {
         }
         assertThat(p.getName()).isNotEqualToIgnoringCase("newName");
         assertThat(p.getDescription().getFlavorText()).isNotEqualTo(flavorText);
-        assertThat(p.getPrices()).containsExactly(price1, price2);
+        assertThat(p.getPrices()).contains(price1, price2);
         assertThat(p.getCategory().getName()).isEqualTo(c.getName());
         assertThat(dao.getAllPrices()).doesNotContainAnyElementsOf(oldPrices);
     }
