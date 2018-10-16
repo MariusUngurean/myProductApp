@@ -309,17 +309,13 @@ public class AppTest {
         Product p = new Product();
         String flavorText = "newDescription";
         String newName = "newName";
-        Price price1 = null;
-        Price price2 = null;
-        Set<Price> pr = null;
-        Category c = null;
         Set<Price> oldPrices = new HashSet<>();
 
         try {
             entityManager.getTransaction().begin();
             p = dao.getAllProducts().get(0);
             oldPrices.addAll(p.getPrices());
-            dao.updateProduct(p.getId(), newName, flavorText, c, pr);
+            dao.updateProduct(p.getId(), newName, flavorText, null, null);
             entityManager.getTransaction().commit();
 
         } catch (Exception e) {
@@ -328,7 +324,7 @@ public class AppTest {
         }
         assertThat(p.getName()).isEqualToIgnoringCase("newName");
         assertThat(p.getDescription().getFlavorText()).isEqualTo(flavorText);
-        assertThat(p.getPrices()).doesNotContain(price1, price2);
+        assertThat(p.getPrices()).doesNotContain(null, null);
         assertThat(p.getCategory()).isNotNull();
         assertThat(dao.getAllPrices()).containsAll(oldPrices);
     }
@@ -426,8 +422,6 @@ public class AppTest {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
         }
-
-        System.out.println(dao.getAllProducts());
         assertThat(p.getDescription()).isNull();
         assertThat(dao.getAllDescriptions()).doesNotContain(d);
     }

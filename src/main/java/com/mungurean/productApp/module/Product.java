@@ -96,12 +96,7 @@ public class Product {
     }
 
     void removePrice(Price price) {
-        for (Price p : prices
-        ) {
-            if (p.equals(price)) {
-                prices.remove(p);
-            }
-        }
+        prices.remove(price);
     }
 
     public void setId(long id) {
