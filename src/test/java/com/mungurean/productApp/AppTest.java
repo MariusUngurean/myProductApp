@@ -243,25 +243,83 @@ public class AppTest {
     }
 
     @Test
-    public void updateProduct() {
-        Product p = new Product();
+    public void updateProductWithNewEntities() {
+        Product product = new Product();
         String flavorText = "newDescription";
+        String newName = "newName";
+        Price price1 = new Price(456, "22/10/2018");
+        Price price2 = new Price(789, "10/05/2018");
+        Set<Price> priceHashSet = new HashSet<>();
+        priceHashSet.add(price1);
+        priceHashSet.add(price2);
+        Category c = new Category("newCategory");
+        Set<Price> oldPrices = new HashSet<>();
 
+        try {
+            entityManager.getTransaction().begin();
+            product = dao.getAllProducts().get(0);
+            oldPrices.addAll(product.getPrices());
+            dao.updateProduct(product.getId(), newName, flavorText, c, priceHashSet);
+            entityManager.getTransaction().commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        assertThat(product.getName()).isEqualToIgnoringCase("newName");
+        assertThat(product.getDescription().getFlavorText()).isEqualTo(flavorText);
+        assertThat(product.getPrices()).containsExactly(price1, price2);
+        assertThat(product.getCategory().getName()).isEqualTo(c.getName());
+        assertThat(dao.getAllPrices()).doesNotContainAnyElementsOf(oldPrices);
+    }
+
+    @Test
+    public void updateProductCategoryAndPriceSet() {
+        Product p = new Product();
+        String flavorText = "";
+        String newName = "";
         Price price1 = new Price(456, "22/10/2018");
         Price price2 = new Price(789, "10/05/2018");
         Set<Price> pr = new HashSet<>();
         pr.add(price1);
         pr.add(price2);
         Category c = new Category("newCategory");
+        Set<Price> oldPrices = new HashSet<>();
 
         try {
             entityManager.getTransaction().begin();
             p = dao.getAllProducts().get(0);
-            dao.updateProductName(p.getId(), "newName");
-            dao.updateProductDescription(p.getId(), flavorText);
-            dao.addCategory(c);
-            dao.updateProductCategory(p.getId(), c);
-            dao.updateProductPrices(p.getId(), pr);
+            oldPrices.addAll(p.getPrices());
+            dao.updateProduct(p.getId(), newName, flavorText, c, pr);
+            entityManager.getTransaction().commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        assertThat(p.getName()).isNotEqualToIgnoringCase("newName");
+        assertThat(p.getDescription().getFlavorText()).isNotEqualTo(flavorText);
+        assertThat(p.getPrices()).containsExactly(price1, price2);
+        assertThat(p.getCategory().getName()).isEqualTo(c.getName());
+        assertThat(dao.getAllPrices()).doesNotContainAnyElementsOf(oldPrices);
+    }
+
+    @Test
+    public void updateProductNameAndDescription() {
+        Product p = new Product();
+        String flavorText = "newDescription";
+        String newName = "newName";
+        Price price1 = null;
+        Price price2 = null;
+        Set<Price> pr = null;
+        Category c = null;
+        Set<Price> oldPrices = new HashSet<>();
+
+        try {
+            entityManager.getTransaction().begin();
+            p = dao.getAllProducts().get(0);
+            oldPrices.addAll(p.getPrices());
+            dao.updateProduct(p.getId(), newName, flavorText, c, pr);
             entityManager.getTransaction().commit();
 
         } catch (Exception e) {
@@ -270,8 +328,9 @@ public class AppTest {
         }
         assertThat(p.getName()).isEqualToIgnoringCase("newName");
         assertThat(p.getDescription().getFlavorText()).isEqualTo(flavorText);
-        assertThat(p.getPrices()).containsExactly(price1, price2);
-        assertThat(p.getCategory().getName()).isEqualTo(c.getName());
+        assertThat(p.getPrices()).doesNotContain(price1, price2);
+        assertThat(p.getCategory()).isNotNull();
+        assertThat(dao.getAllPrices()).containsAll(oldPrices);
     }
 
     @Test
@@ -328,7 +387,7 @@ public class AppTest {
     }
 
     @Test
-    public void deleteProduct(){
+    public void deleteProduct() {
         Product p = new Product();
         Description d = new Description();
         Set<Price> pr = new HashSet<>();

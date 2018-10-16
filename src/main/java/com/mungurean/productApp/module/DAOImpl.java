@@ -115,10 +115,10 @@ public class DAOImpl {
         entityManager.persist(product);
     }
 
-    public long addDescription(Description description) {
-        entityManager.persist(description);
-        return description.getId();
-    }
+//    public long addDescription(Description description) {
+//        entityManager.persist(description);
+//        return description.getId();
+//    }
 
     public long addCategory(Category category) {
         entityManager.persist(category);
@@ -130,6 +130,13 @@ public class DAOImpl {
             findProductById(productId).ifPresent(product -> product.addPrice(price));
         entityManager.persist(price);
         return price.getId();
+    }
+
+    private void addPriceSet(Set<Price> priceSet, long productId) {
+        for (Price price : priceSet
+        ) {
+            addPrice(price, productId);
+        }
     }
 
     //update methods
@@ -150,24 +157,47 @@ public class DAOImpl {
         });
     }
 
-    public void updateProductName(long productId, String newProductName) {
-        findProductById(productId).ifPresent(product -> product.setName(newProductName));
-    }
-
-    public void updateProductDescription(long productId, String newDescriptionText) {
-        findProductById(productId).ifPresent(product -> product.getDescription().setFlavorText(newDescriptionText));
-    }
-
-    public void updateProductCategory(long productId, Category category) {
+    public void updateProduct(long productId, String newProductName, String newDescriptionFlavourText, Category newCategory, Set<Price> newPriceSet) {
         findProductById(productId).ifPresent(product -> {
-            long categoryId = findCategoryByName(category.getName()).isPresent() ? category.getId() : addCategory(category);
-            findCategoryById(categoryId).ifPresent(product::setCategory);
+            if (!newProductName.equals("")) {
+                product.setName(newProductName);
+            }
+            if (!newDescriptionFlavourText.equals("")) {
+                product.getDescription().setFlavorText(newDescriptionFlavourText);
+            }
+            if (newCategory != null) {
+                findCategoryById(newCategory.getId()).orElseGet(() -> {
+                    addCategory(newCategory);
+                    return newCategory;
+                });
+                product.setCategory(newCategory);
+            }
+            if (newPriceSet != null) {
+                deletePrices(product.getPrices());
+                addPriceSet(newPriceSet, productId);
+                product.setPrices(newPriceSet);
+            }
         });
     }
 
-    public void updateProductPrices(long productId, Set<Price> prices) {
-        findProductById(productId).ifPresent(product -> product.setPrices(prices));
-    }
+//    public void updateProductName(long productId, String newProductName) {
+//        findProductById(productId).ifPresent(product -> product.setName(newProductName));
+//    }
+//
+//    public void updateProductDescription(long productId, String newDescriptionText) {
+//        findProductById(productId).ifPresent(product -> product.getDescription().setFlavorText(newDescriptionText));
+//    }
+//
+//    public void updateProductCategory(long productId, Category category) {
+//        findProductById(productId).ifPresent(product -> {
+//            long categoryId = findCategoryByName(category.getName()).isPresent() ? category.getId() : addCategory(category);
+//            findCategoryById(categoryId).ifPresent(product::setCategory);
+//        });
+//    }
+//
+//    public void updateProductPrices(long productId, Set<Price> prices) {
+//        findProductById(productId).ifPresent(product -> product.setPrices(prices));
+//    }
 
     public void updateCategory(long id, String newName) {
         findCategoryById(id).ifPresent(category -> category.setName(newName));
