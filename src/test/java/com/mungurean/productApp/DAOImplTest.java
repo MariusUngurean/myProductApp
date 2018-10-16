@@ -8,19 +8,13 @@ import org.junit.Test;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.transaction.Transactional;
 
 import java.util.*;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 
-/**
- * Unit test for simple App.
- */
-
-@Transactional
-public class AppTest {
+public class DAOImplTest {
 
     private EntityManagerFactory entityManagerFactory =
             Persistence.createEntityManagerFactory("projectDatabase");
@@ -92,13 +86,15 @@ public class AppTest {
         List<Description> list = new ArrayList<>();
         try {
             entityManager.getTransaction().begin();
-            list = dao.getAllDescriptions();
+            list.addAll(dao.getAllDescriptions());
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
         }
-        assertThat(list).containsExactlyElementsOf(dao.getAllDescriptions());
+        assertThat(dao.getAllDescriptions())
+                .containsExactlyElementsOf(list)
+                .isNotEmpty();
     }
 
     @Test
@@ -106,13 +102,15 @@ public class AppTest {
         List<Category> list = new ArrayList<>();
         try {
             entityManager.getTransaction().begin();
-            list = dao.getAllCategories();
+            list.addAll(dao.getAllCategories());
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
         }
-        assertThat(list).containsExactlyElementsOf(dao.getAllCategories());
+        assertThat(dao.getAllCategories())
+                .containsExactlyElementsOf(list)
+                .isNotEmpty();
     }
 
     @Test
@@ -120,13 +118,15 @@ public class AppTest {
         List<Price> list = new ArrayList<>();
         try {
             entityManager.getTransaction().begin();
-            list = dao.getAllPrices();
+            list.addAll(dao.getAllPrices());
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
         }
-        assertThat(list).containsExactlyElementsOf(dao.getAllPrices());
+        assertThat(dao.getAllPrices())
+                .containsExactlyElementsOf(list)
+                .isNotEmpty();
     }
 
     @Test
@@ -144,6 +144,8 @@ public class AppTest {
             entityManager.getTransaction().rollback();
         }
         assertThat(dao.getAllProducts()).contains(p);
+        assertThat(dao.findDescriptionByText("descr1")).isNotEmpty();
+        assertThat(dao.findCategoryByName("cat1")).isNotEmpty();
     }
 
     @Test
