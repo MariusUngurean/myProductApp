@@ -5,6 +5,7 @@ import com.mungurean.productApp.module.*;
 
 import javax.persistence.EntityTransaction;
 import java.util.List;
+import java.util.Set;
 
 public class Service {
     private DAOImpl dao;
@@ -117,31 +118,18 @@ public class Service {
 
     }
 
-//    public void updateProduct(long id, String name, String descriptionFlavorText, List<Price> prices, Category category) {
-//        long categoryId;
-//        long[] pricesIds = new long[prices.size()];
-//        try {
-//            transaction.begin();
-//            categoryId = (dao.findCategoryByName(category.getName()).isPresent())
-//                    ? category.getId()
-//                    : dao.addCategory(category);
-//
-//            for (int i = 0; i < prices.size(); i++) {
-//                pricesIds[i] = (dao.findPriceByValueAndDate(prices.get(i).getPrice(), prices.get(i).getDate()).isPresent())
-//                        ? prices.get(i).getId()
-//                        : dao.addPrice(prices.get(i), id);
-//            }
-//            dao.updateProduct(id, name, descriptionFlavorText, categoryId, pricesIds);
-//            transaction.commit();
-//            System.out.println("Product updated");
-//        } catch (Exception e) {
-//            e.getStackTrace();
-//            if (transaction != null && transaction.isActive()) {
-//                transaction.rollback();
-//            }
-//        }
-//
-//    }
+    public void updateProduct(long id, String name, String descriptionFlavorText, Category category, Set<Price> prices) {
+        try {
+            transaction.begin();
+            dao.updateProduct(id, name, descriptionFlavorText, category, prices);
+            transaction.commit();
+            System.out.println("Product has been updated");
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null && transaction.isActive())
+                transaction.rollback();
+        }
+    }
 
     public void updateCategory(long id, String name) {
         try {
