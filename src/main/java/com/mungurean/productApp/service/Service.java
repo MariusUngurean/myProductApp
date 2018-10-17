@@ -5,7 +5,6 @@ import com.mungurean.productApp.module.*;
 
 import javax.persistence.EntityTransaction;
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -76,19 +75,19 @@ public class Service {
         }
     }
 
-    public void showAllPrices() {
-        try {
-            transaction.begin();
-            System.out.println("Here is a list of all the products");
-            System.out.println(dao.getAllPrices());
-            transaction.commit();
-        } catch (Exception e) {
-            e.getStackTrace();
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-        }
-    }
+//    public void showAllPrices() {
+//        try {
+//            transaction.begin();
+//            System.out.println("Here is a list of all the products");
+//            System.out.println(dao.getAllPrices());
+//            transaction.commit();
+//        } catch (Exception e) {
+//            e.getStackTrace();
+//            if (transaction != null && transaction.isActive()) {
+//                transaction.rollback();
+//            }
+//        }
+//    }
 
     public void addProduct(Product product) {
         try {
@@ -133,50 +132,50 @@ public class Service {
         }
     }
 
-    public void updateCategory(long id, String name) {
-        try {
-            transaction.begin();
-            dao.updateCategory(id, name);
-            transaction.commit();
-            System.out.println("Category updated");
-        } catch (Exception e) {
-            e.getStackTrace();
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-        }
+//    public void updateCategory(long id, String name) {
+//        try {
+//            transaction.begin();
+//            dao.updateCategory(id, name);
+//            transaction.commit();
+//            System.out.println("Category updated");
+//        } catch (Exception e) {
+//            e.getStackTrace();
+//            if (transaction != null && transaction.isActive()) {
+//                transaction.rollback();
+//            }
+//        }
+//
+//    }
 
-    }
+//    public void updateDescription(long id, String newFlavorText, Product newProduct) {
+//        try {
+//            transaction.begin();
+//            dao.updateDescription(id, newFlavorText, newProduct);
+//            transaction.commit();
+//            System.out.println("Description updated");
+//        } catch (Exception e) {
+//            e.getStackTrace();
+//            if (transaction != null && transaction.isActive()) {
+//                transaction.rollback();
+//            }
+//        }
+//
+//    }
 
-    public void updateDescription(long id, String newFlavorText, Product newProduct) {
-        try {
-            transaction.begin();
-            dao.updateDescription(id, newFlavorText, newProduct);
-            transaction.commit();
-            System.out.println("Description updated");
-        } catch (Exception e) {
-            e.getStackTrace();
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-        }
-
-    }
-
-    public void updatePrice(long id, double newValue, String newDate) {
-        try {
-            transaction.begin();
-            dao.updatePrice(id, newValue, newDate);
-            transaction.commit();
-            System.out.println("Price updated");
-        } catch (Exception e) {
-            e.getStackTrace();
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-        }
-
-    }
+//    public void updatePrice(long id, double newValue, String newDate) {
+//        try {
+//            transaction.begin();
+//            dao.updatePrice(id, newValue, newDate);
+//            transaction.commit();
+//            System.out.println("Price updated");
+//        } catch (Exception e) {
+//            e.getStackTrace();
+//            if (transaction != null && transaction.isActive()) {
+//                transaction.rollback();
+//            }
+//        }
+//
+//    }
 
     public void deleteProduct(long id) {
         try {
@@ -191,44 +190,44 @@ public class Service {
         }
     }
 
-    public void deleteDescription(long id) {
-        try {
-            transaction.begin();
-            dao.deleteDescription(id);
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-        }
-    }
+//    public void deleteDescription(long id) {
+//        try {
+//            transaction.begin();
+//            dao.deleteDescription(id);
+//            transaction.commit();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            if (transaction != null && transaction.isActive()) {
+//                transaction.rollback();
+//            }
+//        }
+//    }
 
-    public void deleteCategory(long id) {
-        try {
-            transaction.begin();
-            dao.deleteCategory(id);
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-        }
-    }
+//    public void deleteCategory(long id) {
+//        try {
+//            transaction.begin();
+//            dao.deleteCategory(id);
+//            transaction.commit();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            if (transaction != null && transaction.isActive()) {
+//                transaction.rollback();
+//            }
+//        }
+//    }
 
-    public void deletePrice(long id) {
-        try {
-            transaction.begin();
-            dao.deletePrice(id);
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-        }
-    }
+//    public void deletePrice(long id) {
+//        try {
+//            transaction.begin();
+//            dao.deletePrice(id);
+//            transaction.commit();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            if (transaction != null && transaction.isActive()) {
+//                transaction.rollback();
+//            }
+//        }
+//    }
 
     public void pricesFromStringWithComaSeparator(String prices, Product product) {
         String[] priceArray = prices.split(",");

@@ -15,5 +15,7 @@ public class App {
         DAOImpl dao = new DAOImpl(entityManager);
         Service service = new Service(dao);
         View view = new View(service);
+
+        view.run();
     }
 }
