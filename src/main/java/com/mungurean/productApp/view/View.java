@@ -37,9 +37,10 @@ public class View {
     private void updateMenu(final long id) {
         System.out.println("Enter the new name , description , category and the new prices all separated by coma " +
                 "(if you do not with to update a field use 2 comas with no space in between and enter the rest)");
+        input.nextLine();
         String[] updateData = input.nextLine().split(",");
         Set<Price> prices = new HashSet<>();
-        for (int i = 3; i <= updateData.length; i++) {
+        for (int i = 3; i < updateData.length; i++) {
             prices.add(new Price(Double.valueOf(updateData[i]), LocalDateTime.now().toString()));
         }
         service.updateProduct(id, updateData[0], updateData[1], new Category(updateData[2]), prices);
@@ -80,6 +81,7 @@ public class View {
                         System.out.println("All the data added");
                     }
                     service.addProduct(product);
+                    input.nextLine();
                     break;
                 case "5":
                     System.out.println("Enter the name of the category ");
@@ -93,6 +95,7 @@ public class View {
                 case "7":
                     System.out.println("Enter the id of the product to delete :");
                     service.deleteProduct(input.nextLong());
+                    input.nextLine();
                     break;
                 case "8":
                     System.exit(0);
