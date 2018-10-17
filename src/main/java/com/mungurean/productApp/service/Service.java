@@ -4,6 +4,8 @@ package com.mungurean.productApp.service;
 import com.mungurean.productApp.module.*;
 
 import javax.persistence.EntityTransaction;
+import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -228,5 +230,11 @@ public class Service {
         }
     }
 
-
+    public void pricesFromStringWithComaSeparator(String prices, Product product) {
+        String[] priceArray = prices.split(",");
+        for (String string : priceArray
+        ) {
+            product.addPrice(new Price(Double.valueOf(string), LocalDateTime.now().toString()));
+        }
+    }
 }
