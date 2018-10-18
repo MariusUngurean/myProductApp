@@ -12,6 +12,7 @@ import javax.persistence.Persistence;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.*;
@@ -54,10 +55,14 @@ public class ServiceTest {
             Object[] args = invocation.getArguments();
             System.out.println("called with arguments: " + Arrays.toString(args));
             return null;
-        }).when(dao).addCategory(isA(Category.class));
-        Category category = new Category("test");
-        service.addCategory(category);
-        verify(dao, times(1)).addCategory(category);
+        }).when(dao).updateProduct(anyLong(), anyString(), anyString(), any(Category.class), anySet());
+        long id = 1;
+        String name = "";
+        String description = "";
+        Category category = new Category();
+        Set<Price> prices = new LinkedHashSet<>();
+        service.updateProduct(id, name, description, category, prices);
+        verify(dao, times(1)).updateProduct(id, name, description, category, prices);
     }
 
     @Test
