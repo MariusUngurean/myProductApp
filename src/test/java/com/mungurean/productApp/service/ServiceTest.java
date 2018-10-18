@@ -4,11 +4,7 @@ import com.mungurean.productApp.module.Category;
 import com.mungurean.productApp.module.DAOImpl;
 import com.mungurean.productApp.module.Price;
 import com.mungurean.productApp.module.Product;
-import org.assertj.core.api.Assertions;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
 import javax.persistence.EntityManager;
@@ -16,7 +12,6 @@ import javax.persistence.Persistence;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.*;
@@ -28,14 +23,6 @@ public class ServiceTest {
             Persistence.createEntityManagerFactory("projectDatabase").createEntityManager();
     private final DAOImpl dao = mock(DAOImpl.class);
     private final Service service = new Service(dao, entityManager);
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
 
     @Test
     public void addProduct() {
