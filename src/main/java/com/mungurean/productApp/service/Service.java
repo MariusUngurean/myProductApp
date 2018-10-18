@@ -6,6 +6,8 @@ import com.mungurean.productApp.module.*;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -231,11 +233,16 @@ public class Service {
 //        }
 //    }
 
-    public void pricesFromStringWithComaSeparator(String prices, Product product) {
-        String[] priceArray = prices.split(",");
-        for (String string : priceArray
-        ) {
-            product.addPrice(new Price(Double.valueOf(string), LocalDateTime.now().toString()));
+    public Set<Price> pricesFromStringWithComaSeparator(String prices, Price firstPrice) {
+        Set<Price> priceSet = new LinkedHashSet<>();
+        priceSet.add(firstPrice);
+        if (!prices.equals("")) {
+            String[] priceArray = prices.split(",");
+            for (String string : priceArray
+            ) {
+                priceSet.add(new Price(Double.valueOf(string), LocalDateTime.now().toString()));
+            }
         }
+        return priceSet;
     }
 }

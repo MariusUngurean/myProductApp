@@ -25,6 +25,12 @@ public class Price {
     public Price() {
     }
 
+    public Price(long id, double price, String time) {
+        this.id = id;
+        this.price = price;
+        this.date = time;
+    }
+
     public Price(double price, String date) {
         this.price = price;
         this.date = date;

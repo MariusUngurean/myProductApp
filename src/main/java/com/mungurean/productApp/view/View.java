@@ -70,16 +70,16 @@ public class View {
                     System.out.println("Product category :");
                     product.setCategory(new Category(input.nextLine()));
                     System.out.println("Initial price of the product :");
-                    product.setPrices(new HashSet<>());
-                    product.addPrice(new Price(input.nextDouble(), LocalDateTime.now().toString()));
+                    Price firstPrice = new Price(input.nextDouble(), LocalDateTime.now().toString());
                     System.out.println("Do you want to add more prices? (Y/N)");
+                    String prices = "";
                     if (input.nextLine().equalsIgnoreCase("y")) {
                         System.out.println("Add all the prices separated by coma :");
-                        String prices = input.nextLine();
-                        service.pricesFromStringWithComaSeparator(prices, product);
+                        prices = input.nextLine();
                     } else if (input.nextLine().equalsIgnoreCase("n")) {
                         System.out.println("All the data added");
                     }
+                    product.setPrices(service.pricesFromStringWithComaSeparator(prices, firstPrice));
                     service.addProduct(product);
                     input.nextLine();
                     break;
