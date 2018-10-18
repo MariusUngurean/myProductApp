@@ -3,6 +3,7 @@ package com.mungurean.productApp.service;
 
 import com.mungurean.productApp.module.*;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -11,19 +12,15 @@ import java.util.Set;
 public class Service {
     private DAOImpl dao;
 
-    public void setTransaction(EntityTransaction transaction) {
-        this.transaction = transaction;
-    }
-
     private EntityTransaction transaction;
 
     public Service() {
 
     }
 
-    public Service(DAOImpl dao) {
+    public Service(DAOImpl dao, EntityManager entityManager) {
         this.dao = dao;
-        transaction = dao.getEntityManager().getTransaction();
+        transaction = entityManager.getTransaction();
     }
 
     public void showAllProducts() {

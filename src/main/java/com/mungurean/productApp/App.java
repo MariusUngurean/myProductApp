@@ -13,7 +13,7 @@ public class App {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("projectDatabase");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         DAOImpl dao = new DAOImpl(entityManager);
-        Service service = new Service(dao);
+        Service service = new Service(dao, entityManager);
         View view = new View(service);
 
         view.run();
