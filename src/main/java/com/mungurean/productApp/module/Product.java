@@ -45,23 +45,23 @@ public class Product {
         return category;
     }
 
-    void setCategory(Category category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    void setDescription(Description description) {
+    public void setDescription(Description description) {
         this.description = description;
     }
 
-    void setPrices(Set<Price> prices) {
+    public void setPrices(Set<Price> prices) {
         this.prices = prices;
     }
 
-    void addPrice(Price price) {
+    public void addPrice(Price price) {
         prices.add(price);
     }
 
