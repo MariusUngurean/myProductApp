@@ -10,6 +10,11 @@ import java.util.Set;
 
 public class Service {
     private DAOImpl dao;
+
+    public void setTransaction(EntityTransaction transaction) {
+        this.transaction = transaction;
+    }
+
     private EntityTransaction transaction;
 
     public Service() {
