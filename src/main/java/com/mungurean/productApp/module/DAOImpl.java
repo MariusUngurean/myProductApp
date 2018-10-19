@@ -115,21 +115,15 @@ public class DAOImpl {
         entityManager.persist(product);
     }
 
-//    public long addDescription(Description description) {
-//        entityManager.persist(description);
-//        return description.getId();
-//    }
 
-    public long addCategory(Category category) {
+    public void addCategory(Category category) {
         entityManager.persist(category);
-        return category.getId();
     }
 
-    public long addPrice(Price price, long productId) {
+    public void addPrice(Price price, long productId) {
         if (productId != -1)
             findProductById(productId).ifPresent(product -> product.addPrice(price));
         entityManager.persist(price);
-        return price.getId();
     }
 
     private void addPriceSet(Set<Price> priceSet, long productId) {
@@ -164,35 +158,14 @@ public class DAOImpl {
         });
     }
 
-//    public void updateProductName(long productId, String newProductName) {
-//        findProductById(productId).ifPresent(product -> product.setName(newProductName));
-//    }
-//
-//    public void updateProductDescription(long productId, String newDescriptionText) {
-//        findProductById(productId).ifPresent(product -> product.getDescription().setFlavorText(newDescriptionText));
-//    }
-//
-//    public void updateProductCategory(long productId, Category category) {
-//        findProductById(productId).ifPresent(product -> {
-//            long categoryId = findCategoryByName(category.getName()).isPresent() ? category.getId() : addCategory(category);
-//            findCategoryById(categoryId).ifPresent(product::setCategory);
-//        });
-//    }
-//
-//    public void updateProductPrices(long productId, Set<Price> prices) {
-//        findProductById(productId).ifPresent(product -> product.setPrices(prices));
-//    }
-
     public void updateCategory(long id, String newName) {
         findCategoryById(id).ifPresent(category -> category.setName(newName));
     }
 
-    public void updateDescription(long id, String newFlavorText, Product newProduct) {
+    public void updateDescription(long id, String newFlavorText) {
         findDescriptionById(id).ifPresent(description -> {
             description.setFlavorText(newFlavorText);
             description.getProduct().setDescription(null);
-            description.setProduct(newProduct);
-            newProduct.setDescription(description);
         });
     }
 
