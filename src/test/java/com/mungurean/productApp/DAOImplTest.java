@@ -1,6 +1,10 @@
 package com.mungurean.productApp;
 
-import com.mungurean.productApp.module.*;
+import com.mungurean.productApp.module.dao.DAOImpl;
+import com.mungurean.productApp.module.model.Category;
+import com.mungurean.productApp.module.model.Description;
+import com.mungurean.productApp.module.model.Price;
+import com.mungurean.productApp.module.model.Product;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -348,24 +352,20 @@ public class DAOImplTest {
 
     @Test
     public void updateDescription() {
-        Description d = new Description();
-        Product newP = new Product();
-        Product p = new Product();
+        Description description = new Description();
+        Product product = new Product();
         try {
             entityManager.getTransaction().begin();
-            newP = dao.getAllProducts().get(dao.getAllProducts().size() - 1);
-            d = dao.getAllDescriptions().get(0);
-            p = d.getProduct();
-            dao.updateDescription(d.getId(), "newDescriptionText", newP);
+            description = dao.getAllDescriptions().get(0);
+            product = description.getProduct();
+            dao.updateDescription(description.getId(), "newDescriptionText");
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
         }
-        assertThat(d.getFlavorText()).isEqualTo("newDescriptionText");
-        assertThat(d.getProduct()).isEqualTo(newP);
-        assertThat(newP.getDescription()).isEqualTo(d);
-        assertThat(p.getDescription()).isNull();
+        assertThat(description.getFlavorText()).isEqualTo("newDescriptionText");
+        assertThat(product.getDescription()).isEqualTo(description);
     }
 
     @Test

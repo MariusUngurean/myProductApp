@@ -1,9 +1,9 @@
 package com.mungurean.productApp.view;
 
-import com.mungurean.productApp.module.Category;
-import com.mungurean.productApp.module.Description;
-import com.mungurean.productApp.module.Price;
-import com.mungurean.productApp.module.Product;
+import com.mungurean.productApp.module.model.Category;
+import com.mungurean.productApp.module.model.Description;
+import com.mungurean.productApp.module.model.Price;
+import com.mungurean.productApp.module.model.Product;
 import com.mungurean.productApp.service.Service;
 
 import java.time.LocalDateTime;

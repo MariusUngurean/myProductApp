@@ -1,4 +1,4 @@
-package com.mungurean.productApp.module;
+package com.mungurean.productApp.module.model;
 
 import javax.persistence.*;
 
@@ -40,7 +40,7 @@ public class Price {
         return product;
     }
 
-    void setProduct(Product product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 
@@ -56,7 +56,7 @@ public class Price {
         return price;
     }
 
-    void setPrice(double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -64,7 +64,7 @@ public class Price {
         return date;
     }
 
-    void setDate(String date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

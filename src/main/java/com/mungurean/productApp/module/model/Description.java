@@ -1,4 +1,4 @@
-package com.mungurean.productApp.module;
+package com.mungurean.productApp.module.model;
 
 
 import javax.persistence.*;
@@ -41,7 +41,7 @@ public class Description {
         return flavorText;
     }
 
-    void setFlavorText(String flavorText) {
+    public void setFlavorText(String flavorText) {
         this.flavorText = flavorText;
     }
 

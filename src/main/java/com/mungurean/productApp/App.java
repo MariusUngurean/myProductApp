@@ -1,6 +1,6 @@
 package com.mungurean.productApp;
 
-import com.mungurean.productApp.module.DAOImpl;
+import com.mungurean.productApp.module.dao.DAOImpl;
 import com.mungurean.productApp.service.Service;
 import com.mungurean.productApp.view.View;
 

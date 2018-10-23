@@ -1,9 +1,9 @@
 package com.mungurean.productApp.service;
 
-import com.mungurean.productApp.module.Category;
-import com.mungurean.productApp.module.DAOImpl;
-import com.mungurean.productApp.module.Price;
-import com.mungurean.productApp.module.Product;
+import com.mungurean.productApp.module.model.Category;
+import com.mungurean.productApp.module.dao.DAOImpl;
+import com.mungurean.productApp.module.model.Price;
+import com.mungurean.productApp.module.model.Product;
 import org.junit.Test;
 import org.mockito.stubbing.Answer;
 

@@ -1,4 +1,4 @@
-package com.mungurean.productApp.module;
+package com.mungurean.productApp.module.model;
 
 
 import javax.persistence.*;
@@ -95,7 +95,7 @@ public class Product {
         return false;
     }
 
-    void removePrice(Price price) {
+    public void removePrice(Price price) {
         prices.remove(price);
     }
 

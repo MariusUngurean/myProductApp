@@ -1,5 +1,10 @@
-package com.mungurean.productApp.module;
+package com.mungurean.productApp.module.dao;
 
+
+import com.mungurean.productApp.module.model.Category;
+import com.mungurean.productApp.module.model.Description;
+import com.mungurean.productApp.module.model.Price;
+import com.mungurean.productApp.module.model.Product;
 
 import javax.persistence.EntityManager;
 
@@ -165,7 +170,6 @@ public class DAOImpl {
     public void updateDescription(long id, String newFlavorText) {
         findDescriptionById(id).ifPresent(description -> {
             description.setFlavorText(newFlavorText);
-            description.getProduct().setDescription(null);
         });
     }
 

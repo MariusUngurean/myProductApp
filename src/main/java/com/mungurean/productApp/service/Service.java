@@ -1,7 +1,11 @@
 package com.mungurean.productApp.service;
 
 
-import com.mungurean.productApp.module.*;
+import com.mungurean.productApp.module.dao.DAOImpl;
+import com.mungurean.productApp.module.model.Category;
+import com.mungurean.productApp.module.model.Description;
+import com.mungurean.productApp.module.model.Price;
+import com.mungurean.productApp.module.model.Product;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
