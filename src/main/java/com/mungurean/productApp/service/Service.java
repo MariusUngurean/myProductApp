@@ -6,6 +6,8 @@ import com.mungurean.productApp.module.model.Category;
 import com.mungurean.productApp.module.model.Description;
 import com.mungurean.productApp.module.model.Price;
 import com.mungurean.productApp.module.model.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -14,9 +16,11 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+@Transactional
 public class Service {
     private DAOImpl dao;
 
+    @Autowired
     private EntityTransaction transaction;
 
     public Service() {
@@ -25,7 +29,7 @@ public class Service {
 
     public Service(DAOImpl dao, EntityManager entityManager) {
         this.dao = dao;
-        transaction = entityManager.getTransaction();
+//        transaction = entityManager.getTransaction();
     }
 
     public void showAllProducts() {
@@ -112,17 +116,17 @@ public class Service {
     }
 
     public void addCategory(Category category) {
-        try {
-            transaction.begin();
-            dao.addCategory(category);
-            transaction.commit();
-            System.out.println("New category added");
-        } catch (Exception e) {
-            e.getStackTrace();
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-        }
+//        try {
+//            transaction.begin();
+        dao.addCategory(category);
+//        transaction.commit();
+        System.out.println("New category added");
+//        } catch (Exception e) {
+//            e.getStackTrace();
+//            if (transaction != null && transaction.isActive()) {
+//                transaction.rollback();
+//            }
+//        }
 
     }
 

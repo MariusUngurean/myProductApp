@@ -5,7 +5,9 @@ import com.mungurean.productApp.module.dao.DAOImpl;
 import com.mungurean.productApp.module.model.Price;
 import com.mungurean.productApp.module.model.Product;
 import org.junit.Test;
+
 import org.mockito.stubbing.Answer;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
