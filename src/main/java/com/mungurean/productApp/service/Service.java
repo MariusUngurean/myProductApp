@@ -24,7 +24,7 @@ public class Service {
 
     }
 
-    public Service(DAOImpl dao, EntityManager entityManager) {
+    public Service(DAOImpl dao) {
         this.dao = dao;
     }
 

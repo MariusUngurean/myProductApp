@@ -9,9 +9,6 @@ import org.junit.Test;
 import org.mockito.stubbing.Answer;
 
 
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
-
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
@@ -22,10 +19,8 @@ import static org.mockito.Mockito.*;
 
 
 public class ServiceTest {
-    private final EntityManager entityManager =
-            Persistence.createEntityManagerFactory("projectDatabase").createEntityManager();
     private final DAOImpl dao = mock(DAOImpl.class);
-    private final Service service = new Service(dao, entityManager);
+    private final Service service = new Service(dao);
 
     @Test
     public void addProduct() {
