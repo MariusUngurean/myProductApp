@@ -117,4 +117,8 @@ public class DaoService {
         }
         return priceSet;
     }
+
+    public void deleteAllProducts() {
+        dao.deleteFromTable("product");
+    }
 }
