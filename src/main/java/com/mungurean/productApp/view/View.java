@@ -1,10 +1,10 @@
 package com.mungurean.productApp.view;
 
-import com.mungurean.productApp.module.model.Category;
-import com.mungurean.productApp.module.model.Description;
-import com.mungurean.productApp.module.model.Price;
-import com.mungurean.productApp.module.model.Product;
-import com.mungurean.productApp.service.Service;
+import com.mungurean.productApp.module.Category;
+import com.mungurean.productApp.module.Description;
+import com.mungurean.productApp.module.Price;
+import com.mungurean.productApp.module.Product;
+import com.mungurean.productApp.service.DaoService;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -13,11 +13,11 @@ import java.util.Set;
 
 public class View {
     private Scanner input;
-    private Service service;
+    private DaoService daoService;
 
 
-    public View(Service service) {
-        this.service = service;
+    public View(DaoService daoService) {
+        this.daoService = daoService;
         input = new Scanner(System.in);
     }
 
@@ -43,7 +43,7 @@ public class View {
         for (int i = 3; i < updateData.length; i++) {
             prices.add(new Price(Double.valueOf(updateData[i]), LocalDateTime.now().toString()));
         }
-        service.updateProduct(id, updateData[0], updateData[1], new Category(updateData[2]), prices);
+        daoService.updateProduct(id, updateData[0], updateData[1], new Category(updateData[2]), prices);
 
     }
 
@@ -52,13 +52,13 @@ public class View {
             menu();
             switch (input.nextLine()) {
                 case "1":
-                    service.showAllProducts();
+                    daoService.showAllProducts();
                     break;
                 case "2":
-                    service.showAllDescriptions();
+                    daoService.showAllDescriptions();
                     break;
                 case "3":
-                    service.showAllCategories();
+                    daoService.showAllCategories();
                     break;
                 case "4":
                     Product product = new Product();
@@ -79,14 +79,14 @@ public class View {
                     } else if (input.nextLine().equalsIgnoreCase("n")) {
                         System.out.println("All the data added");
                     }
-                    product.setPrices(service.pricesFromStringWithComaSeparator(prices, firstPrice));
-                    service.addProduct(product);
+                    product.setPrices(daoService.pricesFromStringWithComaSeparator(prices, firstPrice));
+                    daoService.addProduct(product);
                     input.nextLine();
                     break;
                 case "5":
                     System.out.println("Enter the name of the category ");
                     Category category = new Category(input.nextLine());
-                    service.addCategory(category);
+                    daoService.addCategory(category);
                     break;
                 case "6":
                     System.out.println("Enter the id of the product");
@@ -94,7 +94,7 @@ public class View {
                     break;
                 case "7":
                     System.out.println("Enter the id of the product to delete :");
-                    service.deleteProduct(input.nextLong());
+                    daoService.deleteProduct(input.nextLong());
                     input.nextLine();
                     break;
                 case "8":

@@ -1,32 +1,33 @@
 package com.mungurean.productApp.service;
 
 
-import com.mungurean.productApp.module.dao.DAOImpl;
-import com.mungurean.productApp.module.model.Category;
-import com.mungurean.productApp.module.model.Description;
-import com.mungurean.productApp.module.model.Price;
-import com.mungurean.productApp.module.model.Product;
+import com.mungurean.productApp.module.DAOImpl;
+import com.mungurean.productApp.module.Category;
+import com.mungurean.productApp.module.Description;
+import com.mungurean.productApp.module.Price;
+import com.mungurean.productApp.module.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
 @Transactional
-public class Service {
+@Service
+public class DaoService {
+    @Autowired
     private DAOImpl dao;
 
-    public Service() {
+    public DaoService() {
 
     }
 
-    public Service(DAOImpl dao) {
-        this.dao = dao;
-    }
+//    public DaoService(DAOImpl dao) {
+//        this.dao = dao;
+//    }
 
     public void showAllProducts() {
         System.out.println("Here is a list of all the products");

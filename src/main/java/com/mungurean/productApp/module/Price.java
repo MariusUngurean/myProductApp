@@ -1,4 +1,4 @@
-package com.mungurean.productApp.module.model;
+package com.mungurean.productApp.module;
 
 import javax.persistence.*;
 

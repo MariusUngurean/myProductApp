@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -14,17 +13,15 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import java.util.Objects;
-import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
 //@PropertySource({"classpath:/resources/persistence.properties"})
 @ComponentScan({"com.mungurean.productApp.module.model"})
-public class PersistenceConfig {
+public class PersistenceConfig implements TransactionManagementConfigurer {
 
     @Autowired
     private Environment env;
@@ -34,11 +31,17 @@ public class PersistenceConfig {
     }
 
     @Bean
+    public DAOImpl dao() {
+        return new DAOImpl();
+    }
+
+    @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(restDataSource());
-        em.setPackagesToScan("com.mungurean.productApp.module.model");
+        em.setPackagesToScan("com.mungurean.productApp.module");
+        em.setPersistenceUnitName("projectDatabase");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -62,17 +65,22 @@ public class PersistenceConfig {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(
-            EntityManagerFactory emf) {
+    public PlatformTransactionManager transactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(emf);
-
+        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
+        transactionManager.setPersistenceUnitName("projectDatabase");
+        transactionManager.setDataSource(restDataSource());
         return transactionManager;
     }
 
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
+    }
+
+    @Override
+    public PlatformTransactionManager annotationDrivenTransactionManager() {
+        return transactionManager();
     }
 
 //    final Properties hibernateProperties() {

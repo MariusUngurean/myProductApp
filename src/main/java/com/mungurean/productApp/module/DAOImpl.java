@@ -1,22 +1,22 @@
-package com.mungurean.productApp.module.dao;
+package com.mungurean.productApp.module;
 
 
-import com.mungurean.productApp.module.model.Category;
-import com.mungurean.productApp.module.model.Description;
-import com.mungurean.productApp.module.model.Price;
-import com.mungurean.productApp.module.model.Product;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
 
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.*;
 
+
+@Component
 public class DAOImpl {
+    @PersistenceContext
     private EntityManager entityManager;
 
-    public DAOImpl(EntityManager entityManager) {
-        this.entityManager = entityManager;
+    public DAOImpl() {
     }
 
     public EntityManager getEntityManager() {
@@ -194,12 +194,12 @@ public class DAOImpl {
 
     public void deleteCategory(long id) {
         findCategoryById(id).ifPresent((category) -> {
-            for (Product p : getAllProducts()
-            ) {
-                if (p.getCategory().equals(category)) {
-                    p.setCategory(null);
-                }
-            }
+//            for (Product p : getAllProducts()
+//            ) {
+//                if (p.getCategory().equals(category)) {
+//                    p.setCategory(null);
+//                }
+//            }
             entityManager.remove(category);
         });
     }
@@ -231,7 +231,7 @@ public class DAOImpl {
         }
     }
 
-    private void flushAndClear() {
+    public void flushAndClear() {
         entityManager.flush();
         entityManager.clear();
     }

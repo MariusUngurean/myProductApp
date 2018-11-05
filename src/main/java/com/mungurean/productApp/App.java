@@ -1,7 +1,6 @@
 package com.mungurean.productApp;
 
-import com.mungurean.productApp.module.dao.DAOImpl;
-import com.mungurean.productApp.service.Service;
+import com.mungurean.productApp.service.DaoService;
 import com.mungurean.productApp.view.View;
 
 import javax.persistence.EntityManager;
@@ -12,9 +11,8 @@ public class App {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("projectDatabase");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        DAOImpl dao = new DAOImpl(entityManager);
-        Service service = new Service(dao, entityManager);
-        View view = new View(service);
+        DaoService daoService = new DaoService();
+        View view = new View(daoService);
 
         view.run();
     }

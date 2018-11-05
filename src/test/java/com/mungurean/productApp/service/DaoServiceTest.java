@@ -1,9 +1,9 @@
 package com.mungurean.productApp.service;
 
-import com.mungurean.productApp.module.model.Category;
-import com.mungurean.productApp.module.dao.DAOImpl;
-import com.mungurean.productApp.module.model.Price;
-import com.mungurean.productApp.module.model.Product;
+import com.mungurean.productApp.module.Category;
+import com.mungurean.productApp.module.DAOImpl;
+import com.mungurean.productApp.module.Price;
+import com.mungurean.productApp.module.Product;
 import org.junit.Test;
 
 import org.mockito.stubbing.Answer;
@@ -18,9 +18,9 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 
-public class ServiceTest {
+public class DaoServiceTest {
     private final DAOImpl dao = mock(DAOImpl.class);
-    private final Service service = new Service(dao);
+    private final DaoService daoService = new DaoService();
 
     @Test
     public void addProduct() {
@@ -30,7 +30,7 @@ public class ServiceTest {
             return null;
         }).when(dao).addProduct(isA(Product.class));
         Product product = new Product("test", null, null, null);
-        service.addProduct(product);
+        daoService.addProduct(product);
         verify(dao, times(1)).addProduct(product);
     }
 
@@ -42,7 +42,7 @@ public class ServiceTest {
             return null;
         }).when(dao).addCategory(isA(Category.class));
         Category category = new Category("test");
-        service.addCategory(category);
+        daoService.addCategory(category);
         verify(dao, times(1)).addCategory(category);
     }
 
@@ -58,7 +58,7 @@ public class ServiceTest {
         String description = "";
         Category category = new Category();
         Set<Price> prices = new LinkedHashSet<>();
-        service.updateProduct(id, name, description, category, prices);
+        daoService.updateProduct(id, name, description, category, prices);
         verify(dao, times(1)).updateProduct(id, name, description, category, prices);
     }
 
@@ -70,7 +70,7 @@ public class ServiceTest {
             return null;
         }).when(dao).deleteProduct(isA(Long.class));
         long id = 1283793;
-        service.deleteProduct(id);
+        daoService.deleteProduct(id);
         verify(dao, times(1)).deleteProduct(id);
     }
 
@@ -78,7 +78,7 @@ public class ServiceTest {
     public void pricesFromStringWithComaSeparator() {
         String prices = "123,456";
         Price firstPrice = new Price(589, LocalDateTime.now().toString());
-        Set<Price> priceSet = service.pricesFromStringWithComaSeparator(prices, firstPrice);
+        Set<Price> priceSet = daoService.pricesFromStringWithComaSeparator(prices, firstPrice);
         double[] values = new double[]{589, 123, 456};
         int i = 0;
         for (Price price : priceSet
