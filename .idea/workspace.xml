@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1886c3b5-84d4-40a3-86ee-e2ac9f48dbd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTestSpring.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/DaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/DaoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTestSpring.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,12 +42,13 @@
     <session id="1980970047">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.115" value="1" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.25" value="1" />
@@ -57,6 +58,7 @@
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.34" value="2" />
           <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.55" value="1" />
@@ -65,27 +67,27 @@
           <entry key="project.open.time.78" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.81" value="2" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="22" />
-          <entry key="java" value="53927" />
+          <entry key="java" value="53987" />
           <entry key="persistence" value="57" />
           <entry key="properties" value="154" />
           <entry key="sql" value="219" />
-          <entry key="txt" value="804" />
-          <entry key="xml" value="771" />
+          <entry key="txt" value="824" />
+          <entry key="xml" value="772" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="DBN-SQL" value="219" />
-          <entry key="JAVA" value="53927" />
-          <entry key="PLAIN_TEXT" value="826" />
+          <entry key="JAVA" value="53987" />
+          <entry key="PLAIN_TEXT" value="846" />
           <entry key="Properties" value="154" />
-          <entry key="XML" value="828" />
+          <entry key="XML" value="829" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -94,7 +96,7 @@
           <entry key="dtd" value="2" />
           <entry key="fxml" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="87" />
+          <entry key="java" value="88" />
           <entry key="persistence" value="2" />
           <entry key="properties" value="3" />
           <entry key="psql" value="25" />
@@ -108,7 +110,7 @@
           <entry key="CLASS" value="27" />
           <entry key="DBN-SQL" value="27" />
           <entry key="DTD" value="2" />
-          <entry key="JAVA" value="87" />
+          <entry key="JAVA" value="88" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="3" />
           <entry key="XML" value="45" />
@@ -122,8 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="201" column="15" lean-forward="true" selection-start-line="196" selection-start-column="14" selection-end-line="201" selection-end-column="15" />
+            <state relative-caret-position="799">
+              <caret line="195" column="54" lean-forward="true" selection-start-line="195" selection-start-column="54" selection-end-line="195" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getAllCategories#0;class#DAOImpl#0" />
@@ -137,6 +139,15 @@
                 <element signature="method#findDescriptionByText#0;class#DAOImpl#0" />
                 <element signature="method#findPriceByValueAndDate#0;class#DAOImpl#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -162,8 +173,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/spring.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+            <state relative-caret-position="34">
+              <caret line="2" column="56" lean-forward="true" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -171,8 +182,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/DaoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="121" column="36" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+            <state relative-caret-position="221">
+              <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3579#3580#0" expanded="true" />
@@ -185,11 +196,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTestSpring.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+            <state relative-caret-position="153">
+              <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding>
-                <element signature="e#1382#1383#0" expanded="true" />
                 <element signature="e#1404#1405#0" expanded="true" />
+                <element signature="e#1445#1446#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -198,7 +209,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-241">
+            <state relative-caret-position="119">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -278,9 +289,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/Service.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/DAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTestSpring.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/DaoService.java" />
         <option value="$PROJECT_DIR$/src/resources/spring.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTestSpring.java" />
       </list>
     </option>
   </component>
@@ -449,7 +460,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541425947791" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542809186702" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/SpringORMwithTX" />
@@ -493,7 +504,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DaoServiceTestSpring.showAllProducts">
+  <component name="RunManager" selected="JUnit.DaoServiceTest">
     <configuration name="DAOImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="productapp" />
       <extension name="coverage">
@@ -504,22 +515,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mungurean.productApp" />
       <option name="MAIN_CLASS_NAME" value="com.mungurean.productApp.DAOImplTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DAOImplTest.addProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="productapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mungurean.productApp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.mungurean.productApp" />
-      <option name="MAIN_CLASS_NAME" value="com.mungurean.productApp.DAOImplTest" />
-      <option name="METHOD_NAME" value="addProduct" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -556,6 +551,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DaoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="productapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mungurean.productApp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mungurean.productApp.service" />
+      <option name="MAIN_CLASS_NAME" value="com.mungurean.productApp.service.DaoServiceTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DaoServiceTestSpring.showAllProducts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="productapp" />
       <extension name="coverage">
@@ -574,18 +583,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.DAOImplTest" />
-      <item itemvalue="JUnit.DAOImplTest.addProduct" />
       <item itemvalue="JUnit.DAOImplTest.getBeanNames" />
       <item itemvalue="JUnit.DAOImplTest.deleteDescription" />
       <item itemvalue="JUnit.DaoServiceTestSpring.showAllProducts" />
+      <item itemvalue="JUnit.DaoServiceTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DaoServiceTest" />
         <item itemvalue="JUnit.DaoServiceTestSpring.showAllProducts" />
         <item itemvalue="JUnit.DAOImplTest.deleteDescription" />
         <item itemvalue="JUnit.DAOImplTest" />
         <item itemvalue="JUnit.DAOImplTest.getBeanNames" />
-        <item itemvalue="JUnit.DAOImplTest.addProduct" />
       </list>
     </recent_temporary>
   </component>
@@ -869,31 +878,17 @@
       <option name="project" value="LOCAL" />
       <updated>1541423167699</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="new service test v1">
+      <created>1541425998730</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1541425998730</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DAOImplTest - 2018.11.05 at 12h 13m 07s.xml">
-      <configuration name="DAOImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DAOImplTest - 2018.11.05 at 12h 14m 41s.xml">
-      <configuration name="DAOImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DAOImplTest - 2018.11.05 at 12h 19m 24s.xml">
-      <configuration name="DAOImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DAOImplTest - 2018.11.05 at 12h 23m 51s.xml">
-      <configuration name="DAOImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DAOImplTest - 2018.11.05 at 12h 24m 25s.xml">
-      <configuration name="DAOImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DAOImplTest - 2018.11.05 at 12h 24m 43s.xml">
-      <configuration name="DAOImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DAOImplTest - 2018.11.05 at 12h 26m 40s.xml">
-      <configuration name="DAOImplTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DAOImplTest_deleteDescription - 2018.11.05 at 12h 27m 32s.xml">
       <configuration name="DAOImplTest.deleteDescription" configurationId="JUnit" />
     </history-entry>
@@ -903,12 +898,33 @@
     <history-entry file="DaoServiceTestSpring_showAllProducts - 2018.11.05 at 15h 48m 17s.xml">
       <configuration name="DaoServiceTestSpring.showAllProducts" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DaoServiceTestSpring_showAllProducts - 2018.11.05 at 15h 51m 35s.xml">
+      <configuration name="DaoServiceTestSpring.showAllProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DaoServiceTestSpring_showAllProducts - 2018.11.21 at 13h 09m 48s.xml">
+      <configuration name="DaoServiceTestSpring.showAllProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DaoServiceTestSpring_showAllProducts - 2018.11.21 at 13h 18m 16s.xml">
+      <configuration name="DaoServiceTestSpring.showAllProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DaoServiceTestSpring_showAllProducts - 2018.11.21 at 13h 19m 21s.xml">
+      <configuration name="DaoServiceTestSpring.showAllProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DaoServiceTestSpring_showAllProducts - 2018.11.21 at 13h 35m 08s.xml">
+      <configuration name="DaoServiceTestSpring.showAllProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DaoServiceTestSpring_showAllProducts - 2018.11.21 at 13h 40m 10s.xml">
+      <configuration name="DaoServiceTestSpring.showAllProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DaoServiceTest - 2018.11.21 at 13h 41m 11s.xml">
+      <configuration name="DaoServiceTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21331316" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -919,7 +935,7 @@
       <window_info id="Learn" order="8" weight="0.32980332" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3276923" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.3876923" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" weight="0.3876923" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5692308" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -967,7 +983,8 @@
     <MESSAGE value="serivce uses @transactional (try's removed)" />
     <MESSAGE value="..." />
     <MESSAGE value="spring xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="spring xml" />
+    <MESSAGE value="new service test v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="new service test v1" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1164,9 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1215,54 +1229,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Description.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Price.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="201" column="15" lean-forward="true" selection-start-line="196" selection-start-column="14" selection-end-line="201" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getAllCategories#0;class#DAOImpl#0" />
-            <element signature="method#getAllDescriptions#0;class#DAOImpl#0" />
-            <element signature="method#getAllPrices#0;class#DAOImpl#0" />
-            <element signature="method#findProductById#0;class#DAOImpl#0" />
-            <element signature="method#findCategoryById#0;class#DAOImpl#0" />
-            <element signature="method#findCategoryByName#0;class#DAOImpl#0" />
-            <element signature="method#findDescriptionById#0;class#DAOImpl#0" />
-            <element signature="method#findPriceById#0;class#DAOImpl#0" />
-            <element signature="method#findDescriptionByText#0;class#DAOImpl#0" />
-            <element signature="method#findPriceByValueAndDate#0;class#DAOImpl#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1279,9 +1249,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Description.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Price.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-241">
+        <state relative-caret-position="119">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1289,10 +1273,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/module/DAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="195" column="54" lean-forward="true" selection-start-line="195" selection-start-column="54" selection-end-line="195" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getAllCategories#0;class#DAOImpl#0" />
+            <element signature="method#getAllDescriptions#0;class#DAOImpl#0" />
+            <element signature="method#getAllPrices#0;class#DAOImpl#0" />
+            <element signature="method#findProductById#0;class#DAOImpl#0" />
+            <element signature="method#findCategoryById#0;class#DAOImpl#0" />
+            <element signature="method#findCategoryByName#0;class#DAOImpl#0" />
+            <element signature="method#findDescriptionById#0;class#DAOImpl#0" />
+            <element signature="method#findPriceById#0;class#DAOImpl#0" />
+            <element signature="method#findDescriptionByText#0;class#DAOImpl#0" />
+            <element signature="method#findPriceByValueAndDate#0;class#DAOImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mungurean/productApp/service/DaoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="121" column="36" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+        <state relative-caret-position="221">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3579#3580#0" expanded="true" />
@@ -1303,18 +1314,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/spring.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+        <state relative-caret-position="34">
+          <caret line="2" column="56" lean-forward="true" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/mungurean/productApp/service/DaoServiceTestSpring.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state relative-caret-position="153">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
-            <element signature="e#1382#1383#0" expanded="true" />
             <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="true" />
           </folding>
         </state>
       </provider>

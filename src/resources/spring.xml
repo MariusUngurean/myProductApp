@@ -14,7 +14,7 @@
 		">
 
     <!-- Scans the classpath for annotated components that will be auto-registered as Spring beans -->
-    <context:component-scan base-package="com.mungurean.productApp.module"/>
+    <context:component-scan base-package="com.mungurean.productApp"/>
     <!-- Activates various annotations to be detected in bean classes e.g: @Autowired -->
     <context:annotation-config/>
 

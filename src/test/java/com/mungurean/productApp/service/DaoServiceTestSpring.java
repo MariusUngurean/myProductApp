@@ -22,6 +22,7 @@ import static org.junit.Assert.*;
 @ContextConfiguration(locations = "classpath:/spring.xml")
 public class DaoServiceTestSpring {
 
+    @Autowired
     private DaoService service;
 
     @Before

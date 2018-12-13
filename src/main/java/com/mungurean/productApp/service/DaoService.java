@@ -7,6 +7,7 @@ import com.mungurean.productApp.module.Description;
 import com.mungurean.productApp.module.Price;
 import com.mungurean.productApp.module.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,8 +16,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+@Component
 @Transactional
-@Service
 public class DaoService {
     @Autowired
     private DAOImpl dao;
